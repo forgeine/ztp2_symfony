@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Task controller.
  */
@@ -6,9 +7,10 @@
 namespace App\Controller;
 
 use App\Entity\Task;
-use App\Repository\TaskRepository;
+use App\Service\TaskService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\Routing\Attribute\Route;
 
 /**
@@ -18,9 +20,18 @@ use Symfony\Component\Routing\Attribute\Route;
 class TaskController extends AbstractController
 {
     /**
+     * Constructor.
+     *
+     * @param TaskService $taskService Task service
+     */
+    public function __construct(private readonly TaskService $taskService)
+    {
+    }
+
+    /**
      * Index action.
      *
-     * @param TaskRepository $taskRepository Task repository
+     * @param int $page Page number
      *
      * @return Response HTTP response
      */
@@ -28,14 +39,11 @@ class TaskController extends AbstractController
         name: 'task_index',
         methods: ['GET']
     )]
-    public function index(TaskRepository $taskRepository): Response
+    public function index(#[MapQueryParameter] int $page = 1): Response
     {
-        $tasks = $taskRepository->findAll();
+        $pagination = $this->taskService->getPaginatedList($page);
 
-        return $this->render(
-            'task/index.html.twig',
-            ['tasks' => $tasks]
-        );
+        return $this->render('task/index.html.twig', ['pagination' => $pagination]);
     }
 
     /**

@@ -6,48 +6,62 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\Task;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
 use Faker\Generator;
 
 /**
  * Class TaskFixtures.
+ *
+ * @psalm-suppress MissingConstructor
  */
-class TaskFixtures extends Fixture
+class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
 {
     /**
-     * Faker.
-     */
-    protected Generator $faker;
-
-    /**
-     * Persistence object manager.
-     */
-    protected ObjectManager $manager;
-
-    /**
-     * Load.
+     * Load data.
      *
-     * @param ObjectManager $manager Persistence object manager
+     * @psalm-suppress PossiblyNullPropertyFetch
+     * @psalm-suppress PossiblyNullReference
+     * @psalm-suppress UnusedClosureParam
      */
-    public function load(ObjectManager $manager): void
+    public function loadData(): void
     {
-        $this->faker = Factory::create();
+        if (!$this->manager instanceof ObjectManager || !$this->faker instanceof Generator) {
+            return;
+        }
 
-        for ($i = 0; $i < 10; ++$i) {
+        $this->createMany(100, 'task', function (int $i) {
             $task = new Task();
             $task->setTitle($this->faker->sentence);
             $task->setCreatedAt(
-                \DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
+                \DateTimeImmutable::createFromMutable(
+                    $this->faker->dateTimeBetween('-100 days', '-1 days')
+                )
             );
             $task->setUpdatedAt(
-                \DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
+                \DateTimeImmutable::createFromMutable(
+                    $this->faker->dateTimeBetween('-100 days', '-1 days')
+                )
             );
-            $manager->persist($task);
-        }
+            $category = $this->getRandomReference('category', Category::class);
+            $task->setCategory($category);
 
-        $manager->flush();
+            return $task;
+        });
+    }
+
+    /**
+     * This method must return an array of fixtures classes
+     * on which the implementing class depends on.
+     *
+     * @return string[] of dependencies
+     *
+     * @psalm-return array{0: CategoryFixtures::class}
+     */
+    public function getDependencies(): array
+    {
+        return [CategoryFixtures::class];
     }
 }
