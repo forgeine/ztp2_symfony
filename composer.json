@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "symfony/maker-bundle": "^1.66",
+        "doctrine/doctrine-fixtures-bundle": "^4.3"
+    }
+}

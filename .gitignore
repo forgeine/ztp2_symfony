@@ -2,3 +2,4 @@
 app/var
 app/vendor
 *.cache
+/vendor/
