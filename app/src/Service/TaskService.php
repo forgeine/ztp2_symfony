@@ -1,12 +1,12 @@
 <?php
 
-
 /**
  * Task service.
  */
 
 namespace App\Service;
 
+use App\Entity\Task;
 use App\Repository\TaskRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -14,7 +14,8 @@ use Knp\Component\Pager\PaginatorInterface;
 /**
  * Class TaskService.
  */
-class TaskService implements TaskServiceInterface{
+class TaskService implements TaskServiceInterface
+{
     /**
      * Items per page.
      *
@@ -29,8 +30,8 @@ class TaskService implements TaskServiceInterface{
     /**
      * Constructor.
      *
-     * @param TaskRepository $taskRepository Task repository
-     * @param PaginatorInterface $paginator Paginator
+     * @param TaskRepository     $taskRepository Task repository
+     * @param PaginatorInterface $paginator      Paginator
      */
     public function __construct(private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
     {
@@ -55,5 +56,25 @@ class TaskService implements TaskServiceInterface{
                 'defaultSortDirection' => 'desc',
             ]
         );
+    }
+
+    /**
+     * Save entity.
+     *
+     * @param Task $task Task entity
+     */
+    public function save(Task $task): void
+    {
+        $this->taskRepository->save($task);
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param Task $task Task entity
+     */
+    public function delete(Task $task): void
+    {
+        $this->taskRepository->delete($task);
     }
 }
