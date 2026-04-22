@@ -1,11 +1,14 @@
 <?php
 
 /**
- * Category controller.
+ * Tag controller.
  */
 
 namespace App\Controller;
 
+use App\Entity\Tag;
+use App\Form\Type\TagType;
+use App\Service\TagServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +46,7 @@ class TagController extends AbstractController
     {
         $pagination = $this->tagService->getPaginatedList($page);
 
-        return $this->render('category/index.html.twig', ['pagination' => $pagination]);
+        return $this->render('tag/index.html.twig', ['pagination' => $pagination]);
     }
 
     /**
@@ -85,18 +88,18 @@ class TagController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->save($category);
+            $this->tagService->save($tag);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('tag_index');
         }
 
         return $this->render(
-            'category/create.html.twig',
+            'tag/create.html.twig',
             ['form' => $form->createView()]
         );
     }
@@ -104,40 +107,40 @@ class TagController extends AbstractController
      * Delete action.
      *
      * @param Request  $request  HTTP request
-     * @param Category $category Category entity
+     * @param Tag $tag Tag  entity
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}/delete',
-        name: 'category_delete',
+        name: 'tag_delete',
         requirements: ['id' => '[1-9]\d*'],
         methods: ['GET', 'DELETE']
     )]
-    public function delete(Request $request, Category $category): Response
+    public function delete(Request $request, Tag $tag): Response
     {
-        $form = $this->createForm(FormType::class, $category, [
+        $form = $this->createForm(FormType::class, $tag, [
             'method' => 'DELETE',
-            'action' => $this->generateUrl('category_delete', ['id' => $category->getId()]),
+            'action' => $this->generateUrl('tag_delete', ['id' => $tag->getId()]),
         ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->delete($category);
+            $this->tagService->delete($tag);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('tag_index');
         }
 
         return $this->render(
-            'category/delete.html.twig',
+            'tag/delete.html.twig',
             [
                 'form' => $form->createView(),
-                'category' => $category,
+                'tag' => $tag,
             ]
         );
     }
@@ -146,44 +149,44 @@ class TagController extends AbstractController
      * Edit action.
      *
      * @param Request  $request  HTTP request
-     * @param Category $category Category entity
+     * @param Tag $tag Tag entity
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}/edit',
-        name: 'category_edit',
+        name: 'tag_edit',
         requirements: ['id' => '[1-9]\d*'],
         methods: ['GET', 'PUT']
     )]
-    public function edit(Request $request, Category $category): Response
+    public function edit(Request $request, Tag $tag): Response
     {
         $form = $this->createForm(
-            CategoryType::class,
-            $category,
+            TagType::class,
+            $tag,
             [
                 'method' => 'PUT',
-                'action' => $this->generateUrl('category_edit', ['id' => $category->getId()]),
+                'action' => $this->generateUrl('tag_edit', ['id' => $tag->getId()]),
             ]
         );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->save($category);
+            $this->tagService->save($tag);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.edited_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('tag_index');
         }
 
         return $this->render(
-            'category/edit.html.twig',
+            'tag/edit.html.twig',
             [
                 'form' => $form->createView(),
-                'category' => $category,
+                'tag' => $tag,
             ]
         );
     }

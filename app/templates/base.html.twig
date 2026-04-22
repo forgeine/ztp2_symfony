@@ -29,6 +29,21 @@
     </div>
 </main>
 
+{% block nav %}
+    <div class="nav">
+
+        <a href="{{ url('task_create')}}" title="{{ 'action.create'|trans }}">
+            {{ 'action.create'|trans }}
+        </a>
+
+
+        <a href="{{ url('category_index')}}" title="{{ 'action.categories'|trans }}">
+            {{ 'action.categories'|trans }}
+        </a>
+
+    </div>
+{% endblock %}
+
 {% block javascripts %}
     {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
     <script

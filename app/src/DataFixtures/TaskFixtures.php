@@ -7,6 +7,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Tag;
 use App\Entity\Task;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -47,6 +48,15 @@ class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInter
             );
             $category = $this->getRandomReference('category', Category::class);
             $task->setCategory($category);
+
+            $tags = $this->manager->getRepository(Tag::class)->findAll();
+            $randomTags = $this->faker->randomElements(
+                $tags,
+                min(count($tags), $this->faker->numberBetween(0, 5))
+            );
+            foreach ($randomTags as $tag) {
+                $task->addTag($tag);
+            }
 
             return $task;
         });

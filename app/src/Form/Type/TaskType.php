@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Task type.
  */
@@ -6,6 +7,7 @@
 namespace App\Form\Type;
 
 use App\Entity\Category;
+use App\Entity\Tag;
 use App\Entity\Task;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -45,8 +47,19 @@ class TaskType extends AbstractType
             EntityType::class,
             [
                 'class' => Category::class,
-                'choice_label' => fn(Category $category): ?string => $category->getTitle(),
+                'choice_label' => fn (Category $category): ?string => $category->getTitle(),
                 'label' => 'label.category',
+                'placeholder' => 'label.none',
+                'required' => true,
+            ]
+        );
+        $builder->add(
+            'tag',
+            EntityType::class,
+            [
+                'class' => Tag::class,
+                'choice_label' => fn (Tag $tag): ?string => $tag->getTitle(),
+                'label' => 'label.tag',
                 'placeholder' => 'label.none',
                 'required' => true,
             ]

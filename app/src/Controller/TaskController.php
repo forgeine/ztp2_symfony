@@ -119,7 +119,7 @@ class TaskController extends AbstractController
         '/{id}/edit',
         name: 'task_edit',
         requirements: ['id' => '[1-9]\d*'],
-        methods: ['GET', 'PUT'] //HOW TO PUT
+        methods: ['GET', 'PUT']
     )]
     public function edit(Request $request, Task $task): Response
     {
@@ -127,7 +127,7 @@ class TaskController extends AbstractController
             TaskType::class,
             $task,
             [
-                'method' => 'PUT', //HOW TO PUT
+                'method' => 'PUT',
                 'action' => $this->generateUrl('task_edit', ['id' => $task->getId()]),
             ]
         );

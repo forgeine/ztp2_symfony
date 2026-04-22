@@ -148,4 +148,55 @@ abstract class AbstractBaseFixtures extends Fixture
 
         return $referenceNameList;
     }
+
+    /**
+     * Set random reference to the object.
+     *
+     * @param string $groupName Objects group name
+     *
+     * @return object Random object reference
+     *
+     * @psalm-suppress MixedAssignment
+     * @psalm-suppress UnusedForeachValue
+     */
+    protected function getTagReference(string $groupName): object
+    {
+        if (!isset($this->referencesIndex[$groupName])) {
+            $this->referencesIndex[$groupName] = [];
+
+            foreach (array_keys($this->referenceRepository->getReferences()) as $key) {
+                if (str_starts_with((string) $key, $groupName.'_')) {
+                    $this->referencesIndex[$groupName][] = $key;
+                }
+            }
+        }
+
+        if (empty($this->referencesIndex[$groupName])) {
+            throw new \InvalidArgumentException(sprintf('Did not find any references saved with the group name "%s"', $groupName));
+        }
+
+        $randomReferenceKey = (string) $this->faker->randomElement($this->referencesIndex[$groupName]);
+
+        return $this->getReference($randomReferenceKey);
+    }
+
+    /**
+     * Get array of objects references based on count.
+     *
+     * @param string $groupName Object group name
+     * @param int    $count     Number of references
+     *
+     * @return object[] Result
+     *
+     * @psalm-return list<object>
+     */
+    protected function getTagReferences(string $groupName, int $count): array
+    {
+        $references = [];
+        while (count($references) < $count) {
+            $references[] = $this->getTagReference($groupName);
+        }
+
+        return $references;
+    }
 }
