@@ -224,12 +224,16 @@ class Task
     }
 
     /**
-     * Remove Tag.
+     * Remove for tag.
      *
-     * @param Tag $tag Tag entity
+     * @param Tag $tag Remove tag
+     *
+     * @return $this Remove tag
      */
-    public function removeTag(Tag $tag): void
+    public function removeTag(Tag $tag): static
     {
         $this->tags->removeElement($tag);
+
+        return $this;
     }
 }

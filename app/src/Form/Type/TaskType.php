@@ -14,12 +14,22 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Form\DataTransformer\TagsDataTransformer;
 
 /**
  * Class TaskType.
  */
 class TaskType extends AbstractType
 {
+    /**
+     * Constructor.
+     *
+     * @param TagsDataTransformer $tagsDataTransformer Tags Data Transformer
+     */
+    public function __construct(private readonly TagsDataTransformer $tagsDataTransformer)
+    {
+    }
+
     /**
      * Builds the form.
      *
@@ -54,15 +64,16 @@ class TaskType extends AbstractType
             ]
         );
         $builder->add(
-            'tag',
-            EntityType::class,
+            'tags',
+            TextType::class,
             [
-                'class' => Tag::class,
-                'choice_label' => fn (Tag $tag): ?string => $tag->getTitle(),
                 'label' => 'label.tag',
-                'placeholder' => 'label.none',
-                'required' => true,
+                'required' => false,
+                'attr' => ['max_length' => 128],
             ]
+        );
+        $builder->get('tags')->addModelTransformer(
+            $this->tagsDataTransformer
         );
     }
 

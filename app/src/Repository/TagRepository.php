@@ -51,4 +51,15 @@ class TagRepository extends ServiceEntityRepository
         $this->getEntityManager()->remove($tag);
         $this->getEntityManager()->flush();
     }
+    /**
+     * Get or create query builder.
+     *
+     * @param QueryBuilder|null $queryBuilder Query builder
+     *
+     * @return QueryBuilder Query builder
+     */
+    private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
+    {
+        return $queryBuilder ?? $this->createQueryBuilder('tag');
+    }
 }
