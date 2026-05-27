@@ -1,13 +1,18 @@
 <?php
+/**
+ * tag service.
+ */
 
 namespace App\Service;
 
-use App\Entity\Category;
 use App\Entity\Tag;
-use App\Repository\CategoryRepository;
+// use App\Form\Type\TagType;
+use App\Repository\RecipeRepository;
 use App\Repository\TagRepository;
+use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\OptimisticLockException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -16,32 +21,37 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class TagService implements TagServiceInterface
 {
+    /**
+     * Items per page.
+     *
+     * @constant int
+     */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 
     /**
-     * Paginator.
+     * Constructor.
+     *
+     * @param TagRepository      $tagRepository    Tag repository
+     * @param PaginatorInterface $paginator        Paginator
+     * @param RecipeRepository   $recipeRepository Recipe repository
      */
-    public function __construct(private readonly TagRepository $tagRepository, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly TagRepository $tagRepository, private readonly PaginatorInterface $paginator, private readonly RecipeRepository $recipeRepository)
     {
     }
 
     /**
-     * Getter for pagiated list.
+     * Get paginated list.
      *
-     * @param Int $page Int
-     * @return PaginationInterface
+     * @param int $page Page number
+     *
+     * @return PaginationInterface<string, mixed> Paginated list
      */
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
             $this->tagRepository->queryAll(),
             $page,
-            self::PAGINATOR_ITEMS_PER_PAGE,
-            [
-                'sortFieldAllowList' => ['tag.id', 'tag.createdAt', 'tag.updatedAt', 'tag.title'],
-                'defaultSortFieldName' => 'tag.updatedAt',
-                'defaultSortDirection' => 'desc',
-            ]
+            self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
 
@@ -49,32 +59,47 @@ class TagService implements TagServiceInterface
      * Save entity.
      *
      * @param Tag $tag Tag entity
+     *
+     * @throws ORMException
      */
     public function save(Tag $tag): void
     {
-        $tag->setUpdatedAt(new \DateTimeImmutable());
-        if (null === $tag->getId()) {
-            $tag->setCreatedAt(new \DateTimeImmutable());
-        }
         $this->tagRepository->save($tag);
     }
+
     /**
-     * Can Tag be deleted?
+     * Delete entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Tag $tag Entity Tag
+     *
+     * @return void Void
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function delete(Tag $tag): void
+    {
+        $this->tagRepository->delete($tag);
+    }
+
+    /**
+     * Can tag be deleted?
+     *
+     * @param Tag $tag Entity Tag
      *
      * @return bool Result
      */
     public function canBeDeleted(Tag $tag): bool
     {
         try {
-            $result = $this->tagRepository->countByTag($tag);
+            $result = $this->recipeRepository->countBytag($tag);
 
             return !($result > 0);
         } catch (NoResultException|NonUniqueResultException) {
             return false;
         }
     }
+
     /**
      * Find by id.
      *

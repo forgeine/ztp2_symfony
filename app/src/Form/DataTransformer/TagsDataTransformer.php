@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tags data transformer.
  */

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <p style="float: right;">
+        <a class="btn btn-outline-primary me-2" href="{{ url('tag_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    </p>
+    <h1>{{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}: {{tag.title}}</h1>
+    {% if tag is defined and tag|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.created_at'|trans }}</dt>
+            <dd>{{ tag.createdAt|format_date('long') }}</dd>
+            <dt>{{ 'label.updated_at'|trans }}</dt>
+            <dd>{{ tag.updatedAt|format_date('long') }}</dd>
+            <dd>
+                <a class="btn btn-outline-primary me-2" href="{{ url('recipe_index', {'tagId': tag.id}) }}" title="{{ 'action.view_recipes'|trans }}">
+                    {{ 'action.view_recipes'|trans }}
+                </a>
+            </dd>
+        </dl>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

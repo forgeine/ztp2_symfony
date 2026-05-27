@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tag type.
  */
@@ -18,15 +17,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class TagType extends AbstractType
 {
     /**
-     * Builds the form.
+     * Builds form.
      *
-     * This method is called for each type in the hierarchy starting from the
-     * top most type. Type extensions can further modify the form.
+     * @param FormBuilderInterface $builder Form Builder
+     * @param array                $options Options
      *
-     * @param FormBuilderInterface $builder The form builder
-     * @param array<string, mixed> $options Form options
-     *
-     * @see FormTypeExtensionInterface::buildForm()
+     * @return void Void
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -37,13 +33,16 @@ class TagType extends AbstractType
                 'label' => 'label.title',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ]);
+            ]
+        );
     }
 
     /**
-     * Configures the options for this type.
+     * Configures options.
      *
-     * @param OptionsResolver $resolver The resolver for the options
+     * @param OptionsResolver $resolver Options Resolver
+     *
+     * @return void Void
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
@@ -51,12 +50,9 @@ class TagType extends AbstractType
     }
 
     /**
-     * Returns the prefix of the template block name for this type.
+     * getBlockPrefix.
      *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
-     *
-     * @return string The prefix of the template block name
+     * @return string tag
      */
     public function getBlockPrefix(): string
     {

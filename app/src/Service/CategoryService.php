@@ -1,11 +1,17 @@
 <?php
+/**
+ * Category service.
+ */
 
 namespace App\Service;
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use App\Repository\RecipeRepository;
+use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\OptimisticLockException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -14,32 +20,37 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class CategoryService implements CategoryServiceInterface
 {
+    /**
+     * Items per page.
+     *
+     * @constant int
+     */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 
     /**
-     * Paginator.
+     * Constructor.
+     *
+     * @param CategoryRepository $categoryRepository Category repository
+     * @param PaginatorInterface $paginator          Paginator
+     * @param RecipeRepository   $recipeRepository   Recipe repository
      */
-    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly RecipeRepository $recipeRepository)
     {
     }
 
     /**
-     * Getter for pagiated list.
+     * Get paginated list.
      *
-     * @param Int $page Int
-     * @return PaginationInterface
+     * @param int $page Page number
+     *
+     * @return PaginationInterface<string, mixed> Paginated list
      */
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
             $this->categoryRepository->queryAll(),
             $page,
-            self::PAGINATOR_ITEMS_PER_PAGE,
-            [
-                'sortFieldAllowList' => ['category.id', 'category.createdAt', 'category.updatedAt', 'category.title'],
-                'defaultSortFieldName' => 'category.updatedAt',
-                'defaultSortDirection' => 'desc',
-            ]
+            self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
 
@@ -47,15 +58,27 @@ class CategoryService implements CategoryServiceInterface
      * Save entity.
      *
      * @param Category $category Category entity
+     *
+     * @throws ORMException
      */
     public function save(Category $category): void
     {
-        $category->setUpdatedAt(new \DateTimeImmutable());
-        if (null === $category->getId()) {
-            $category->setCreatedAt(new \DateTimeImmutable());
-        }
         $this->categoryRepository->save($category);
     }
+
+    /**
+     * Delete entity.
+     *
+     * @param Category $category Category entity
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function delete(Category $category): void
+    {
+        $this->categoryRepository->delete($category);
+    }
+
     /**
      * Can Category be deleted?
      *
@@ -66,11 +89,25 @@ class CategoryService implements CategoryServiceInterface
     public function canBeDeleted(Category $category): bool
     {
         try {
-            $result = $this->taskRepository->countByCategory($category);
+            $result = $this->recipeRepository->countByCategory($category);
 
             return !($result > 0);
         } catch (NoResultException|NonUniqueResultException) {
             return false;
         }
+    }
+
+    /**
+     * Find by id.
+     *
+     * @param int $id Category id
+     *
+     * @return Category|null Category
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Category
+    {
+        return $this->categoryRepository->findOneById($id);
     }
 }

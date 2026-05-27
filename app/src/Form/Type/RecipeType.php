@@ -1,25 +1,23 @@
 <?php
-
 /**
- * Task type.
+ * recipe type.
  */
 
 namespace App\Form\Type;
 
 use App\Entity\Category;
-use App\Entity\Tag;
-use App\Entity\Task;
+use App\Entity\Recipe;
+use App\Form\DataTransformer\TagsDataTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use App\Form\DataTransformer\TagsDataTransformer;
 
 /**
- * Class TaskType.
+ * Class recipeType.
  */
-class TaskType extends AbstractType
+class RecipeType extends AbstractType
 {
     /**
      * Constructor.
@@ -32,9 +30,6 @@ class TaskType extends AbstractType
 
     /**
      * Builds the form.
-     *
-     * This method is called for each type in the hierarchy starting from the
-     * top most type. Type extensions can further modify the form.
      *
      * @param FormBuilderInterface $builder The form builder
      * @param array<string, mixed> $options Form options
@@ -53,11 +48,21 @@ class TaskType extends AbstractType
             ]
         );
         $builder->add(
+            'content',
+            TextType::class,
+            [
+                'label' => 'label.content',
+                'required' => true,
+            ]
+        );
+        $builder->add(
             'category',
             EntityType::class,
             [
                 'class' => Category::class,
-                'choice_label' => fn (Category $category): ?string => $category->getTitle(),
+                'choice_label' => function ($category): string {
+                    return $category->getTitle();
+                },
                 'label' => 'label.category',
                 'placeholder' => 'label.none',
                 'required' => true,
@@ -78,27 +83,22 @@ class TaskType extends AbstractType
     }
 
     /**
-     * Configures the options for this type.
+     * Configures options.
      *
-     * @param OptionsResolver $resolver The resolver for the options
+     * @param OptionsResolver $resolver Options Resolver
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Task::class]);
+        $resolver->setDefaults(['data_class' => Recipe::class]);
     }
 
     /**
-     * Returns the prefix of the template block name for this type.
+     * GetBlockPrefix.
      *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
-     *
-     * @return string The prefix of the template block name
-     *
-     * @psalm-return 'task'
+     * @return string recipe
      */
     public function getBlockPrefix(): string
     {
-        return 'task';
+        return 'recipe';
     }
 }

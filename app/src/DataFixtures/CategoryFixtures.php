@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Category fixtures.
  */
@@ -7,8 +6,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
-use Doctrine\Persistence\ObjectManager;
-use Faker\Generator;
 
 /**
  * Class CategoryFixtures.
@@ -20,17 +17,12 @@ class CategoryFixtures extends AbstractBaseFixtures
     /**
      * Load data.
      *
-     * @psalm-suppress PossiblyNullPropertyFetch
      * @psalm-suppress PossiblyNullReference
      * @psalm-suppress UnusedClosureParam
      */
     public function loadData(): void
     {
-        if (!$this->manager instanceof ObjectManager || !$this->faker instanceof Generator) {
-            return;
-        }
-
-        $this->createMany(20, 'category', function (int $i) {
+        $this->createMany(20, 'categories', function (int $i) {
             $category = new Category();
             $category->setTitle($this->faker->unique()->word);
             $category->setCreatedAt(
@@ -46,5 +38,6 @@ class CategoryFixtures extends AbstractBaseFixtures
 
             return $category;
         });
+        $this->manager->flush();
     }
 }

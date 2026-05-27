@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'title.user_edit'| trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.user_edit'| trans }}</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

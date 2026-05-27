@@ -1,0 +1,13 @@
+{# templates/recipe/rate.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'label.rating2'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'label.rating2'|trans }}</h1>
+    <p>Oceń przepis: "{{ recipe.title }}"</p>
+    {{ form_start(form) }}
+    {{ form_row(form.value) }}
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,14 +1,11 @@
 <?php
-
 /**
  * Tag fixtures.
  */
 
 namespace App\DataFixtures;
 
-use App\Entity\Tag;
-use Doctrine\Persistence\ObjectManager;
-use Faker\Generator;
+use App\Entity\tag;
 
 /**
  * Class TagFixtures.
@@ -20,18 +17,13 @@ class TagFixtures extends AbstractBaseFixtures
     /**
      * Load data.
      *
-     * @psalm-suppress PossiblyNullPropertyFetch
      * @psalm-suppress PossiblyNullReference
      * @psalm-suppress UnusedClosureParam
      */
     public function loadData(): void
     {
-        if (!$this->manager instanceof ObjectManager || !$this->faker instanceof Generator) {
-            return;
-        }
-
-        $this->createMany(20, 'category', function (int $i) {
-            $tag = new Tag();
+        $this->createMany(20, 'tags', function (int $i) {
+            $tag = new tag();
             $tag->setTitle($this->faker->unique()->word);
             $tag->setCreatedAt(
                 \DateTimeImmutable::createFromMutable(
@@ -46,5 +38,6 @@ class TagFixtures extends AbstractBaseFixtures
 
             return $tag;
         });
+        $this->manager->flush();
     }
 }

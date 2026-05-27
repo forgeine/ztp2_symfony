@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.category_details'|trans({'%id%': category.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <p style="float: right;">
+        <a class="btn btn-outline-primary me-2" href="{{ url('category_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    </p>
+    <h1>{{ 'title.category_details'|trans({'%id%': category.id|default('')}) }}:
+        {{ category.title }}
+    </h1>
+    {% if category is defined %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.created_at'|trans }}</dt>
+            <dd>{{ category.createdAt|format_date('long') }}</dd>
+            <dt>{{ 'label.updated_at'|trans }}</dt>
+            <dd>{{ category.updatedAt|format_date('long') }}</dd>
+            <dd>
+                <a class="btn btn-outline-primary me-2" href="{{ url('recipe_index', {'categoryId': category.id}) }}" title="{{ 'action.view_recipes'|trans }}">
+                    {{ 'action.view_recipes'|trans }}
+                </a>
+            </dd>
+        </dl>
+    {% else %}
+        <p>{{ 'message.record_not_found'|trans }}</p>
+    {% endif %}
+{% endblock %}

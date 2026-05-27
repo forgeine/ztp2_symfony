@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'action.edit_users'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'action.edit_users'|trans }}</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{ 'label.user_id'|trans }}</th>
+            <th>{{ 'label.user'|trans }}</th>
+            <th>{{ 'label.actions'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ path('edit_user', {id: user.id}) }}" class="btn btn-outline-primary">{{ 'action.edit'|trans }}</a>
+                    <a href="{{ path('admin_change_password', {id: user.id}) }}" class="btn btn-outline-primary">{{ 'action.edit_password'|trans }}</a>
+                    <form method="post" action="{{ path('delete_user', {id: user.id}) }}" style="display:inline-block;" onsubmit="return confirm('Usunięcie użytkownika {{ user.email }}, usunie także jego przepisy. Na pewno usunąć?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                        <button class="btn btn-outline-danger">{{ 'action.delete'|trans }}</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,24 +1,19 @@
 <?php
-
 /**
- * Task fixtures.
+ * recipe fixtures.
  */
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
-use App\Entity\Tag;
-use App\Entity\Task;
+use App\Entity\Recipe;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Generator;
 
 /**
- * Class TaskFixtures.
- *
- * @psalm-suppress MissingConstructor
+ * Class RecipeFixtures.
  */
-class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
+class RecipeFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
 {
     /**
      * Load data.
@@ -32,34 +27,35 @@ class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInter
         if (!$this->manager instanceof ObjectManager || !$this->faker instanceof Generator) {
             return;
         }
-
-        $this->createMany(100, 'task', function (int $i) {
-            $task = new Task();
-            $task->setTitle($this->faker->sentence);
-            $task->setCreatedAt(
+        $this->createMany(100, 'recipes', function (int $i) {
+            $recipe = new Recipe();
+            $recipe->setTitle($this->faker->city);
+            $recipe->setContent($this->faker->sentence);
+            $recipe->setCreatedAt(
                 \DateTimeImmutable::createFromMutable(
                     $this->faker->dateTimeBetween('-100 days', '-1 days')
                 )
             );
-            $task->setUpdatedAt(
+            $recipe->setUpdatedAt(
                 \DateTimeImmutable::createFromMutable(
                     $this->faker->dateTimeBetween('-100 days', '-1 days')
                 )
             );
-            $category = $this->getRandomReference('category', Category::class);
-            $task->setCategory($category);
-
-            $tags = $this->manager->getRepository(Tag::class)->findAll();
-            $randomTags = $this->faker->randomElements(
-                $tags,
-                min(count($tags), $this->faker->numberBetween(0, 5))
+            $category = $this->getRandomReference('categories');
+            $recipe->setCategory($category);
+            $tags = $this->getRandomReferences(
+                'tags',
+                $this->faker->numberBetween(0, 5)
             );
-            foreach ($randomTags as $tag) {
-                $task->addTag($tag);
+            foreach ($tags as $tag) {
+                $recipe->addTag($tag);
             }
+            $author = $this->getRandomReference('users');
+            $recipe->setAuthor($author);
 
-            return $task;
+            return $recipe;
         });
+        $this->manager->flush();
     }
 
     /**
@@ -72,6 +68,6 @@ class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInter
      */
     public function getDependencies(): array
     {
-        return [CategoryFixtures::class];
+        return [CategoryFixtures::class, TagFixtures::class, UserFixtures::class];
     }
 }

@@ -1,14 +1,27 @@
 <?php
+/**
+ * Tag repository.
+ */
 
 namespace App\Repository;
 
 use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Exception\ORMException;
+use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Class TagRepository.
+ *
+ * @method Tag|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tag|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tag[]    findAll()
+ * @method Tag[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ *
+ * @extends ServiceEntityRepository<tag>
  */
 class TagRepository extends ServiceEntityRepository
 {
@@ -29,28 +42,40 @@ class TagRepository extends ServiceEntityRepository
      */
     public function queryAll(): QueryBuilder
     {
-        return $this->createQueryBuilder('tag');
+        return $this->getOrCreateQueryBuilder()
+            ->select('partial tag.{id, createdAt, updatedAt, title}')
+            ->orderBy('tag.updatedAt', 'DESC');
     }
+
     /**
      * Save entity.
      *
      * @param Tag $tag Tag entity
+     *
+     * @throws ORMException
      */
     public function save(Tag $tag): void
     {
-        $this->getEntityManager()->persist($tag);
-        $this->getEntityManager()->flush();
+        assert($this->_em instanceof EntityManager);
+        $this->_em->persist($tag);
+        $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
      * @param Tag $tag Tag entity
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
      */
     public function delete(Tag $tag): void
     {
-        $this->getEntityManager()->remove($tag);
-        $this->getEntityManager()->flush();
+        assert($this->_em instanceof EntityManager);
+        $this->_em->remove($tag);
+        $this->_em->flush();
     }
+
     /**
      * Get or create query builder.
      *
