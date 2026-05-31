@@ -28,16 +28,9 @@ abstract class AbstractBaseFixtures extends Fixture
     protected ?ObjectManager $manager = null;
 
     /**
-     * Object reference index.
-     *
-     * @var array<string, array<int, array-key>>
-     */
-    private array $referencesIndex = [];
-
-    /**
      * @var array<string, array<int, array{name: string, class: string}>>
      */
-    private array $references = [];
+    private static array $references = [];
 
     /**
      * Load.
@@ -92,7 +85,7 @@ abstract class AbstractBaseFixtures extends Fixture
 
             $this->addReference($referenceName, $entity);
 
-            $this->references[$groupName][] = [
+            self::$references[$groupName][] = [
                 'name' => $referenceName,
                 'class' => $entity::class,
             ];
@@ -111,7 +104,11 @@ abstract class AbstractBaseFixtures extends Fixture
      */
     protected function getRandomReference(string $groupName): object
     {
-        if (empty($this->references[$groupName])) {
+        if (!$this->faker instanceof Generator) {
+            throw new \LogicException('Faker is not initialized.');
+        }
+
+        if (empty(self::$references[$groupName])) {
             throw new \InvalidArgumentException(sprintf(
                 'Did not find any references saved with the group name "%s"',
                 $groupName
@@ -119,7 +116,7 @@ abstract class AbstractBaseFixtures extends Fixture
         }
 
         $randomReference = $this->faker->randomElement(
-            $this->references[$groupName]
+            self::$references[$groupName]
         );
 
         return $this->getReference(

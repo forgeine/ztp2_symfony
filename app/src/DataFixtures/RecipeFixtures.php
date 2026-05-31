@@ -64,10 +64,14 @@ class RecipeFixtures extends AbstractBaseFixtures implements DependentFixtureInt
      *
      * @return string[] of dependencies
      *
-     * @psalm-return array{0: CategoryFixtures::class}
+     * @psalm-return array{0: CategoryFixtures::class, 1: TagFixtures::class, 2: UserFixtures::class}
      */
     public function getDependencies(): array
     {
-        return [CategoryFixtures::class, TagFixtures::class, UserFixtures::class];
+        return [
+            CategoryFixtures::class,
+            TagFixtures::class,
+            UserFixtures::class,
+        ];
     }
 }
