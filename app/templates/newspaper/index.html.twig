@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.newspaper_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.newspaper_list'|trans }}</h1>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="btn btn-outline-success me-2" style="display: inline-block; float:right;" href="{{ url('newspaper_create') }}" title="{{ 'action.create'|trans }}">
+            {{ 'action.create'|trans }}
+        </a>
+    {% endif %}
+    {% if app.user %}
+        {% if app.request.attributes.get('_route') == 'newspaper_index' %}
+            <a style="display: inline-block; float:right;" class="btn btn-outline-primary me-2" href="{{ path('newspaper_own') }}">{{ 'action.own'|trans }}</a>
+            <a style="display: inline-block; float:right;" class="btn btn-outline-primary me-2"  href="{{ path('newspaper_index') }}">{{ 'action.clear'|trans }}</a>
+        {% else %}
+            <a style="display: inline-block; float:right;" class="btn btn-outline-primary me-2"  href="{{ path('newspaper_index') }}">{{ 'action.index'|trans }}</a>
+            <a style="display: inline-block; float:right;" class="btn btn-outline-primary me-2"  href="{{ path('newspaper_own') }}">{{ 'action.clear'|trans }}</a>
+        {% endif %}
+    {% else %}
+        <a style="display: inline-block; float:right;" class="btn btn-outline-primary me-2"  href="{{ path('newspaper_index') }}">{{ 'action.clear'|trans }}</a>
+    {% endif %}
+    {% if pagination is defined and pagination.items|length %}
+        <div style="display: inline-block;" class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 'newspaper.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.updated_at'|trans, 'newspaper.updatedAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'newspaper.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.rating'|trans, 'newspaper.averageRating') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.user'|trans, 'author.email') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.title') }}</th>
+                <th>{{ 'label.tag' |trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for newspaper in pagination.items %}
+                <tr>
+                    <td>{{ newspaper.createdAt|format_date('long') }}</td>
+                    <td>{{ newspaper.updatedAt|format_date('long') }}</td>
+                    <td><b>{{ newspaper.title }}</b></td>
+                    <td>
+                        {% if newspaper.averageRating is not null %}
+                            {{ newspaper.averageRating }}
+                        {% else %}
+                            {{ 'Brak ocen' }}
+                        {% endif %}
+                    </td>
+                    <td>{{ newspaper.author.email }}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{{ url('newspaper_index', {'categoryId': newspaper.category.id}) }}" title="{{ newspaper.category.title }}">
+                            {{ newspaper.category.title }}
+                        </a>
+                    </td>
+                    <td>
+                        {% if newspaper.tags is defined and newspaper.tags|length %}
+                            {% for tag in newspaper.tags %}
+                                <a class="btn btn-outline-primary" href="{{ url('newspaper_index', {'tagId': tag.id}) }}" title="{{ tag.title }}">
+                                    {{ tag.title }}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                        {# tutaj #}
+                        {% endif %}
+                    </td>
+                    <td style="width:30%;">
+                        <a class="btn btn-outline-primary" href="{{ url('newspaper_show', {id: newspaper.id}) }}" title="{{ 'action.show'|trans }}">
+                            {{ 'action.show'|trans }}
+                        </a>
+                        {% if is_granted('EDIT', newspaper) %}
+                            <a class="btn btn-outline-success" href="{{ url('newspaper_edit', {id: newspaper.id}) }}" title="{{ 'action.edit'|trans }}">
+                                {{ 'action.edit'|trans }}
+                            </a>
+                        {% endif %}
+                        {% if is_granted('DELETE', newspaper) %}
+                            <a class="btn btn-outline-danger" href="{{ url('newspaper_delete', {id: newspaper.id}) }}" title="{{ 'action.delete'|trans }}">
+                                {{ 'action.delete'|trans }}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

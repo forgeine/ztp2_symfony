@@ -18,8 +18,8 @@
             <dt>{{ 'label.updated_at'|trans }}</dt>
             <dd>{{ tag.updatedAt|format_date('long') }}</dd>
             <dd>
-                <a class="btn btn-outline-primary me-2" href="{{ url('recipe_index', {'tagId': tag.id}) }}" title="{{ 'action.view_recipes'|trans }}">
-                    {{ 'action.view_recipes'|trans }}
+                <a class="btn btn-outline-primary me-2" href="{{ url('newspaper_index', {'tagId': tag.id}) }}" title="{{ 'action.view_newspapers'|trans }}">
+                    {{ 'action.view_newspapers'|trans }}
                 </a>
             </dd>
         </dl>

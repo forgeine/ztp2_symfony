@@ -20,8 +20,8 @@
             <dt>{{ 'label.updated_at'|trans }}</dt>
             <dd>{{ category.updatedAt|format_date('long') }}</dd>
             <dd>
-                <a class="btn btn-outline-primary me-2" href="{{ url('recipe_index', {'categoryId': category.id}) }}" title="{{ 'action.view_recipes'|trans }}">
-                    {{ 'action.view_recipes'|trans }}
+                <a class="btn btn-outline-primary me-2" href="{{ url('newspaper_index', {'categoryId': category.id}) }}" title="{{ 'action.view_newspapers'|trans }}">
+                    {{ 'action.view_newspapers'|trans }}
                 </a>
             </dd>
         </dl>

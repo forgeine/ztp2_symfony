@@ -6,7 +6,6 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use App\Entity\Recipe;
 use App\Form\Type\CategoryType;
 use App\Service\CategoryServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -163,11 +162,11 @@ class CategoryController extends AbstractController
         if (!$this->isGranted('ROLE_ADMIN') || !$user) {
             return $this->redirectToRoute('category_index');
         }
-        // Checking if contains a recipe
+        // Checking if contains a newspaper
         if (!$this->categoryService->canBeDeleted($category)) {
             $this->addFlash(
                 'warning',
-                $this->translator->trans('message.category_contains_recipes')
+                $this->translator->trans('message.category_contains_newspapers')
             );
 
             return $this->redirectToRoute('category_index');

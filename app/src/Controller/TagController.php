@@ -161,11 +161,11 @@ class TagController extends AbstractController
         if (!$this->isGranted('ROLE_ADMIN') || !$user) {
             return $this->redirectToRoute('tag_index');
         }
-        // Checking if tag contains a recipe
+        // Checking if tag contains a newspaper
         if (!$this->tagService->canBeDeleted($tag)) {
             $this->addFlash(
                 'warning',
-                $this->translator->trans('message.tag_contains_recipes')
+                $this->translator->trans('message.tag_contains_newspapers')
             );
 
             return $this->redirectToRoute('tag_index');

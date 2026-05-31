@@ -6,7 +6,7 @@
 namespace App\Service;
 
 use App\Entity\User;
-use App\Repository\RecipeRepository;
+use App\Repository\NewspaperRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -20,11 +20,11 @@ class AdminUserService implements AdminUserServiceInterface
      * Constructor.
      *
      * @param UserRepository              $userRepository   User Repository
-     * @param RecipeRepository            $recipeRepository Recipe Repository
+     * @param NewspaperRepository            $newspaperRepository Newspaper Repository
      * @param UserPasswordHasherInterface $passwordHasher   Password Hasher
      * @param EntityManagerInterface      $em               Entity Manager
      */
-    public function __construct(private readonly UserRepository $userRepository, private readonly RecipeRepository $recipeRepository, private readonly UserPasswordHasherInterface $passwordHasher, private readonly EntityManagerInterface $em)
+    public function __construct(private readonly UserRepository $userRepository, private readonly NewspaperRepository $newspaperRepository, private readonly UserPasswordHasherInterface $passwordHasher, private readonly EntityManagerInterface $em)
     {
     }
 
@@ -73,9 +73,9 @@ class AdminUserService implements AdminUserServiceInterface
      */
     public function deleteUser(User $user): void
     {
-        $recipes = $this->recipeRepository->findByAuthor($user);
-        foreach ($recipes as $recipe) {
-            $this->em->remove($recipe);
+        $newspapers = $this->newspaperRepository->findByAuthor($user);
+        foreach ($newspapers as $newspaper) {
+            $this->em->remove($newspaper);
         }
         $this->em->remove($user);
         $this->em->flush();

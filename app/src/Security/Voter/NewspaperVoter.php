@@ -1,19 +1,19 @@
 <?php
 /**
- * Recipe voter.
+ * Newspaper voter.
  */
 
 namespace App\Security\Voter;
 
-use App\Entity\Recipe;
+use App\Entity\Newspaper;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Class recipeVoter.
+ * Class NewspaperVoter.
  */
-class RecipeVoter extends Voter
+class NewspaperVoter extends Voter
 {
     /**
      * Edit permission.
@@ -47,7 +47,7 @@ class RecipeVoter extends Voter
     protected function supports(string $attribute, mixed $subject): bool
     {
         return in_array($attribute, [self::EDIT, self::VIEW, self::DELETE])
-            && $subject instanceof Recipe;
+            && $subject instanceof Newspaper;
     }
 
     /**
@@ -65,7 +65,7 @@ class RecipeVoter extends Voter
         if (!$user instanceof UserInterface) {
             return false;
         }
-        if (!$subject instanceof Recipe) {
+        if (!$subject instanceof Newspaper) {
             return false;
         }
         if (in_array('ROLE_ADMIN', $user->getRoles())) {
@@ -81,41 +81,41 @@ class RecipeVoter extends Voter
     }
 
     /**
-     * Checks if user can edit recipe.
+     * Checks if user can edit newspaper.
      *
-     * @param Recipe        $recipe Recipe entity
+     * @param Newspaper        $newspaper Newspaper entity
      * @param UserInterface $user   User
      *
      * @return bool Result
      */
-    private function canEdit(Recipe $recipe, UserInterface $user): bool
+    private function canEdit(Newspaper $newspaper, UserInterface $user): bool
     {
-        return $recipe->getAuthor() === $user;
+        return $newspaper->getAuthor() === $user;
     }
 
     /**
-     * Checks if user can view recipe.
+     * Checks if user can view newspaper.
      *
-     * @param Recipe        $recipe Recipe entity
+     * @param Newspaper        $newspaper Newspaper entity
      * @param UserInterface $user   User
      *
      * @return bool Result
      */
-    private function canView(Recipe $recipe, UserInterface $user): bool
+    private function canView(Newspaper $newspaper, UserInterface $user): bool
     {
-        return $recipe->getAuthor() === $user;
+        return $newspaper->getAuthor() === $user;
     }
 
     /**
-     * Checks if user can delete recipe.
+     * Checks if user can delete newspaper.
      *
-     * @param Recipe        $recipe Recipe entity
+     * @param Newspaper        $newspaper Newspaper entity
      * @param UserInterface $user   User
      *
      * @return bool Result
      */
-    private function canDelete(Recipe $recipe, UserInterface $user): bool
+    private function canDelete(Newspaper $newspaper, UserInterface $user): bool
     {
-        return $recipe->getAuthor() === $user;
+        return $newspaper->getAuthor() === $user;
     }
 }

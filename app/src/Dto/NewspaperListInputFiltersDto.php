@@ -1,14 +1,14 @@
 <?php
 /**
- * Recipe list input filters DTO.
+ * Newspaper list input filters DTO.
  */
 
 namespace App\Dto;
 
 /**
- * Class RecipeListInputFiltersDto.
+ * Class NewspaperListInputFiltersDto.
  */
-class RecipeListInputFiltersDto
+class NewspaperListInputFiltersDto
 {
     /**
      * Constructor.

@@ -1,46 +1,47 @@
 <?php
 /**
- * Recipe service interface.
+ * Newspaper service interface.
  */
 
 namespace App\Service;
 
-use App\Dto\RecipeListInputFiltersDto;
+use App\Dto\NewspaperListInputFiltersDto;
 use App\Entity\Comment;
-use App\Entity\Recipe;
+use App\Entity\Newspaper;
+use App\Entity\Rating;
 use App\Entity\Tag;
 use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- * Interface RecipeServiceInterface.
+ * Interface NewspaperServiceInterface.
  */
-interface RecipeServiceInterface
+interface NewspaperServiceInterface
 {
     /**
      * Get paginated list.
      *
-     * @param int                       $page    Page
-     * @param User                      $author  Author
-     * @param RecipeListInputFiltersDto $filters Filters
+     * @param int                          $page    Page
+     * @param User|null                    $author  Author
+     * @param NewspaperListInputFiltersDto $filters Filters
      *
      * @return PaginationInterface Pagination
      */
-    public function getPaginatedList(int $page, User $author, RecipeListInputFiltersDto $filters): PaginationInterface;
+    public function getPaginatedList(int $page, ?User $author, NewspaperListInputFiltersDto $filters): PaginationInterface;
 
     /**
      * Save entity.
      *
-     * @param Recipe $recipe Recipe entity
+     * @param Newspaper $newspaper Newspaper entity
      */
-    public function save(Recipe $recipe): void;
+    public function save(Newspaper $newspaper): void;
 
     /**
      * Delete entity.
      *
-     * @param Recipe $recipe Recipe entity
+     * @param Newspaper $newspaper Newspaper entity
      */
-    public function delete(Recipe $recipe): void;
+    public function delete(Newspaper $newspaper): void;
 
     /**
      * Find one by title.
@@ -68,4 +69,13 @@ interface RecipeServiceInterface
      * @return void Void
      */
     public function deleteComment(Comment $comment): void;
+
+    /**
+     * Save rating.
+     *
+     * @param Rating $rating Entity rating
+     *
+     * @return void Void
+     */
+    public function saveRating(Rating $rating): void;
 }

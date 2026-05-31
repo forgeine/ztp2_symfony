@@ -4,16 +4,16 @@
  */
 namespace App\Entity;
 
-use App\Repository\RecipeRepository;
+use App\Repository\NewspaperRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class Recipe.
+ * Class Newspaper.
  * @psalm-suppress MissingConstructor
  */
-#[ORM\Entity(repositoryClass: RecipeRepository::class)]
-class Recipe
+#[ORM\Entity(repositoryClass: NewspaperRepository::class)]
+class Newspaper
 {
     /**
      * Primary key.

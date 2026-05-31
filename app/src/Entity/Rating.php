@@ -30,11 +30,11 @@ class Rating
     private ?int $value = null;
 
     /**
-     * Recipe relation.
+     * Newspaper relation.
      */
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ratings')]
+    #[ORM\ManyToOne(targetEntity: Newspaper::class, inversedBy: 'ratings')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Recipe $recipe = null;
+    private ?Newspaper $newspaper = null;
 
     /**
      * User relation.
@@ -79,25 +79,25 @@ class Rating
     }
 
     /**
-     * Getter for recipe.
+     * Getter for newspaper.
      *
-     * @return Recipe|null Recipe
+     * @return Newspaper|null Newspaper
      */
-    public function getRecipe(): ?Recipe
+    public function getNewspaper(): ?Newspaper
     {
-        return $this->recipe;
+        return $this->newspaper;
     }
 
     /**
-     * Setter for recipe.
+     * Setter for newspaper.
      *
-     * @param Recipe|null $recipe Recipe
+     * @param Newspaper|null $newspaper Newspaper
      *
-     * @return $this Recipe
+     * @return $this Newspaper
      */
-    public function setRecipe(?Recipe $recipe): self
+    public function setNewspaper(?Newspaper $newspaper): self
     {
-        $this->recipe = $recipe;
+        $this->newspaper = $newspaper;
 
         return $this;
     }

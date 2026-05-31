@@ -48,12 +48,12 @@ class Comment
     private ?string $content = null;
 
     /**
-     * Recipe relation.
+     * Newspaper relation.
      *
-     * @var Recipe|null Recipe
+     * @var Newspaper|null Newspaper
      */
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'comments')]
-    private ?Recipe $recipe = null;
+    #[ORM\ManyToOne(targetEntity: Newspaper::class, inversedBy: 'comments')]
+    private ?Newspaper $newspaper = null;
 
     /**
      * Author relation.
@@ -98,25 +98,25 @@ class Comment
     }
 
     /**
-     * Getter for recipe.
+     * Getter for newspaper.
      *
-     * @return Recipe|null Recipe
+     * @return Newspaper|null Newspaper
      */
-    public function getRecipe(): ?Recipe
+    public function getNewspaper(): ?Newspaper
     {
-        return $this->recipe;
+        return $this->newspaper;
     }
 
     /**
-     * Setter for recipe.
+     * Setter for newspaper.
      *
-     * @param Recipe|null $recipe Recipe
+     * @param Newspaper|null $newspaper Newspaper
      *
-     * @return $this Recipe
+     * @return $this Newspaper
      */
-    public function setRecipe(?Recipe $recipe): static
+    public function setNewspaper(?Newspaper $newspaper): static
     {
-        $this->recipe = $recipe;
+        $this->newspaper = $newspaper;
 
         return $this;
     }

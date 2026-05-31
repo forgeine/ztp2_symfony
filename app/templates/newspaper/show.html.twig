@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ recipe.title }} | Szczegóły przepisu
+    {{ newspaper.title }} | Szczegóły newspaper
 {% endblock %}
 {% block body %}
-    <a style="float:right;" class="btn btn-outline-primary me-2" href="{{ url('recipe_index') }}" title="{{ 'action.back_to_list'|trans }}">
+    <a style="float:right;" class="btn btn-outline-primary me-2" href="{{ url('newspaper_index') }}" title="{{ 'action.back_to_list'|trans }}">
         {{ 'action.back_to_list'|trans }}
     </a>
-    <h1>{{ recipe.title }}</h1>
-    <p>{{ 'label.category'|trans }}: <a class="btn btn-outline-primary me-2" href="{{ url('recipe_index', {'categoryId': recipe.category.id}) }}" title="{{ recipe.category.title }}">
-            {{ recipe.category.title }}
+    <h1>{{ newspaper.title }}</h1>
+    <p>{{ 'label.category'|trans }}: <a class="btn btn-outline-primary me-2" href="{{ url('newspaper_index', {'categoryId': newspaper.category.id}) }}" title="{{ newspaper.category.title }}">
+            {{ newspaper.category.title }}
         </a>
     </p>
-    <p>{{ recipe.content }}</p>
+    <p>{{ newspaper.content }}</p>
     <p>{{ 'label.tag'|trans }}:
-    {% for tag in recipe.tags %}
-        <a class="btn btn-outline-primary" href="{{ url('recipe_index', {'tagId': tag.id}) }}" title="{{ tag.title }}">
+    {% for tag in newspaper.tags %}
+        <a class="btn btn-outline-primary" href="{{ url('newspaper_index', {'tagId': tag.id}) }}" title="{{ tag.title }}">
             {{ tag.title }}
         </a>
     {% endfor %}
     </p>
     <h2>{{ 'label.rating'|trans }}</h2>
         <p>
-        {% if recipe.averageRating is not null %}
-            Średnia ocen: {{ recipe.averageRating }} (Ilość ocen: {{ recipe.ratings.count }} )
+        {% if newspaper.averageRating is not null %}
+            Średnia ocen: {{ newspaper.averageRating }} (Ilość ocen: {{ newspaper.ratings.count }} )
         {% else %}
             Brak ocen.
         {% endif %}
         </p>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <a href="{{ path('recipe_rate', {'id': recipe.id}) }}" class="btn btn-primary">{{'action.rating_add'|trans}}</a>
+        <a href="{{ path('newspaper_rate', {'id': newspaper.id}) }}" class="btn btn-primary">{{'action.rating_add'|trans}}</a>
     {% else %}
 
     {% endif %}
@@ -55,7 +55,7 @@
                 <br>
                 <medium>{{ comment.content }}</medium>
                 {% if is_granted('ROLE_ADMIN') %}
-                    <form action="{{ path('comment_delete', {'recipe_id': recipe.id, 'id': comment.id}) }}" method="post" style="display: inline-block;">
+                    <form action="{{ path('comment_delete', {'newspaper_id': newspaper.id, 'id': comment.id}) }}" method="post" style="display: inline-block;">
                         <button class="btn btn-outline-danger" type="submit">Delete</button>
                     </form>
                 {% endif %}

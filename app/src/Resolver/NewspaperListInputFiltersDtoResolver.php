@@ -1,20 +1,20 @@
 <?php
 /**
- * RecipeListInputFiltersDto resolver.
+ * NewspaperListInputFiltersDto resolver.
  */
 
 namespace App\Resolver;
 
-use App\Dto\recipeListInputFiltersDto;
-use App\Entity\Enum\RecipeStatus;
+use App\Dto\NewspaperListInputFiltersDto;
+use App\Entity\Enum\NewspaperStatus;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 
 /**
- * RecipeListInputFiltersDtoResolver class.
+ * NewspaperListInputFiltersDtoResolver class.
  */
-class RecipeListInputFiltersDtoResolver implements ValueResolverInterface
+class NewspaperListInputFiltersDtoResolver implements ValueResolverInterface
 {
     /**
      * Returns the possible value(s).
@@ -27,13 +27,13 @@ class RecipeListInputFiltersDtoResolver implements ValueResolverInterface
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
     {
         $argumentType = $argument->getType();
-        if (!$argumentType || !is_a($argumentType, recipeListInputFiltersDto::class, true)) {
+        if (!$argumentType || !is_a($argumentType, NewspaperListInputFiltersDto::class, true)) {
             return [];
         }
         $categoryId = $request->query->get('categoryId');
         $tagId = $request->query->get('tagId');
-        $statusId = $request->query->get('statusId', RecipeStatus::ACTIVE->value);
+        $statusId = $request->query->get('statusId', NewspaperStatus::ACTIVE->value);
 
-        return [new recipeListInputFiltersDto($categoryId, $tagId, $statusId)];
+        return [new NewspaperListInputFiltersDto($categoryId, $tagId, $statusId)];
     }
 }

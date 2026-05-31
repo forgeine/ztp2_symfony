@@ -1,13 +1,13 @@
 <?php
 /**
- * Recipe repository.
+ * Newspaper repository.
  */
 
 namespace App\Repository;
 
-use App\Dto\RecipeListFiltersDto;
+use App\Dto\NewspaperListFiltersDto;
 use App\Entity\Category;
-use App\Entity\Recipe;
+use App\Entity\Newspaper;
 use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Exception\ORMException;
@@ -19,18 +19,18 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Class RecipeRepository.
+ * Class NewspaperRepository.
  *
- * @method recipe|null find($id, $lockMode = null, $lockVersion = null)
- * @method recipe|null findOneBy(array $criteria, array $orderBy = null)
- * @method recipe[]    findAll()
- * @method recipe[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Newspaper|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Newspaper|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Newspaper[]    findAll()
+ * @method Newspaper[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  *
- * @extends ServiceEntityRepository<recipe>
+ * @extends ServiceEntityRepository<Newspaper>
  *
  * @psalm-suppress LessSpecificImplementedReturnType
  */
-class RecipeRepository extends ServiceEntityRepository
+class NewspaperRepository extends ServiceEntityRepository
 {
     /**
      * Paginator items.
@@ -44,29 +44,29 @@ class RecipeRepository extends ServiceEntityRepository
      */
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Recipe::class);
+        parent::__construct($registry, Newspaper::class);
     }
 
     /**
      * QueryAll.
      *
-     * @param RecipeListFiltersDto $filters RecipeListFiltersDto
+     * @param NewspaperListFiltersDto $filters NewspaperListFiltersDto
      *
      * @return QueryBuilder Aply filters
      */
-    public function queryAll(RecipeListFiltersDto $filters): QueryBuilder
+    public function queryAll(NewspaperListFiltersDto $filters): QueryBuilder
     {
         $queryBuilder = $this->getOrCreateQueryBuilder()
             ->select(
-                'partial recipe.{id, createdAt, updatedAt, title, content, averageRating}',
+                'partial newspaper.{id, createdAt, updatedAt, title, content, averageRating}',
                 'partial category.{id, title}',
                 'partial tags.{id, title}',
                 'partial author.{id, email}'
             )
-            ->join('recipe.category', 'category')
-            ->leftJoin('recipe.tags', 'tags')
-            ->leftJoin('recipe.author', 'author')
-            ->orderBy('recipe.updatedAt', 'DESC');
+            ->join('newspaper.category', 'category')
+            ->leftJoin('newspaper.tags', 'tags')
+            ->leftJoin('newspaper.author', 'author')
+            ->orderBy('newspaper.updatedAt', 'DESC');
 
         return $this->applyFiltersToList($queryBuilder, $filters);
     }
@@ -85,8 +85,8 @@ class RecipeRepository extends ServiceEntityRepository
     {
         $qb = $this->getOrCreateQueryBuilder();
 
-        return $qb->select($qb->expr()->countDistinct('recipe.id'))
-            ->where('recipe.category = :category')
+        return $qb->select($qb->expr()->countDistinct('newspaper.id'))
+            ->where('newspaper.category = :category')
             ->setParameter(':category', $category)
             ->getQuery()
             ->getSingleScalarResult();
@@ -106,8 +106,8 @@ class RecipeRepository extends ServiceEntityRepository
     {
         $qb = $this->getOrCreateQueryBuilder();
 
-        return $qb->select($qb->expr()->countDistinct('recipe.id'))
-            ->join('recipe.tags', 't')
+        return $qb->select($qb->expr()->countDistinct('newspaper.id'))
+            ->join('newspaper.tags', 't')
             ->where('t = :tag')
             ->setParameter('tag', $tag)
             ->getQuery()
@@ -117,55 +117,55 @@ class RecipeRepository extends ServiceEntityRepository
     /**
      * Entity save.
      *
-     * @param Recipe $recipe Entity
+     * @param Newspaper $newspaper Entity
      *
      * @return void Void
      *
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function save(Recipe $recipe): void
+    public function save(Newspaper $newspaper): void
     {
-        $this->getEntityManager()->persist($recipe);
+        $this->getEntityManager()->persist($newspaper);
         $this->getEntityManager()->flush();
     }
 
     /**
      * Entity delete.
      *
-     * @param Recipe $recipe          Entity
-     * @param bool   $cascadeComments Comments
-     * @param bool   $cascadeRatings  Ratings
+     * @param Newspaper $newspaper       Entity
+     * @param bool      $cascadeComments Comments
+     * @param bool      $cascadeRatings  Ratings
      */
-    public function delete(Recipe $recipe, bool $cascadeComments = true, bool $cascadeRatings = true): void
+    public function delete(Newspaper $newspaper, bool $cascadeComments = true, bool $cascadeRatings = true): void
     {
         $entityManager = $this->getEntityManager();
         if ($cascadeComments) {
-            foreach ($recipe->getComments() as $comment) {
+            foreach ($newspaper->getComments() as $comment) {
                 $entityManager->remove($comment);
             }
         }
         if ($cascadeRatings) {
-            foreach ($recipe->getRatings() as $rating) {
+            foreach ($newspaper->getRatings() as $rating) {
                 $entityManager->remove($rating);
             }
         }
-        $entityManager->remove($recipe);
+        $entityManager->remove($newspaper);
         $entityManager->flush();
     }
 
     /**
      * Query by author.
      *
-     * @param UserInterface        $user    User
-     * @param RecipeListFiltersDto $filters Filters
+     * @param UserInterface           $user    User
+     * @param NewspaperListFiltersDto $filters Filters
      *
      * @return QueryBuilder QueryBuilder
      */
-    public function queryByAuthor(UserInterface $user, RecipeListFiltersDto $filters): QueryBuilder
+    public function queryByAuthor(UserInterface $user, NewspaperListFiltersDto $filters): QueryBuilder
     {
         $queryBuilder = $this->queryAll($filters);
-        $queryBuilder->andWhere('recipe.author = :author')
+        $queryBuilder->andWhere('newspaper.author = :author')
             ->setParameter('author', $user);
 
         return $queryBuilder;
@@ -176,22 +176,22 @@ class RecipeRepository extends ServiceEntityRepository
      *
      * @param QueryBuilder|null $queryBuilder Query builder
      *
-     * @return QueryBuilder Query builder for recipe
+     * @return QueryBuilder Query builder for newspaper
      */
     private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
     {
-        return $queryBuilder ?? $this->createQueryBuilder('recipe');
+        return $queryBuilder ?? $this->createQueryBuilder('newspaper');
     }
 
     /**
      * Apply filters to list.
      *
-     * @param QueryBuilder         $queryBuilder QueryBuilder
-     * @param RecipeListFiltersDto $filters      Filters
+     * @param QueryBuilder            $queryBuilder QueryBuilder
+     * @param NewspaperListFiltersDto $filters      Filters
      *
      * @return QueryBuilder Applying filters
      */
-    private function applyFiltersToList(QueryBuilder $queryBuilder, RecipeListFiltersDto $filters): QueryBuilder
+    private function applyFiltersToList(QueryBuilder $queryBuilder, NewspaperListFiltersDto $filters): QueryBuilder
     {
         if ($filters->category instanceof Category) {
             $queryBuilder->andWhere('category = :category')
@@ -208,15 +208,15 @@ class RecipeRepository extends ServiceEntityRepository
     /**
      * Calculate average rating.
      *
-     * @param Recipe $recipe Entity
+     * @param Newspaper $newspaper Entity
      *
      * @return void Void
      */
-    private function calculateAverageRating(Recipe $recipe): void
+    private function calculateAverageRating(Newspaper $newspaper): void
     {
         $entityManager = $this->getEntityManager();
         $sum = 0;
-        $ratings = $recipe->getRatings();
+        $ratings = $newspaper->getRatings();
         $count = $ratings->count();
         if ($count > 0) {
             foreach ($ratings as $rating) {
@@ -226,8 +226,8 @@ class RecipeRepository extends ServiceEntityRepository
         } else {
             $averageRating = null;
         }
-        $recipe->setAverageRating($averageRating);
-        $entityManager->persist($recipe);
+        $newspaper->setAverageRating($averageRating);
+        $entityManager->persist($newspaper);
         $entityManager->flush();
     }
 }

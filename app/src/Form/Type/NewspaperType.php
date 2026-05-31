@@ -1,12 +1,12 @@
 <?php
 /**
- * recipe type.
+ * Newspaper type.
  */
 
 namespace App\Form\Type;
 
 use App\Entity\Category;
-use App\Entity\Recipe;
+use App\Entity\Newspaper;
 use App\Form\DataTransformer\TagsDataTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -15,9 +15,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class recipeType.
+ * Class NewspaperType.
  */
-class RecipeType extends AbstractType
+class NewspaperType extends AbstractType
 {
     /**
      * Constructor.
@@ -89,16 +89,16 @@ class RecipeType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Recipe::class]);
+        $resolver->setDefaults(['data_class' => Newspaper::class]);
     }
 
     /**
      * GetBlockPrefix.
      *
-     * @return string recipe
+     * @return string newspaper
      */
     public function getBlockPrefix(): string
     {
-        return 'recipe';
+        return 'newspaper';
     }
 }

@@ -7,7 +7,7 @@ namespace App\Service;
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
-use App\Repository\RecipeRepository;
+use App\Repository\NewspaperRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -30,11 +30,11 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository $categoryRepository Category repository
-     * @param PaginatorInterface $paginator          Paginator
-     * @param RecipeRepository   $recipeRepository   Recipe repository
+     * @param CategoryRepository  $categoryRepository  Category repository
+     * @param PaginatorInterface  $paginator           Paginator
+     * @param NewspaperRepository $newspaperRepository Newspaper repository
      */
-    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly RecipeRepository $recipeRepository)
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly NewspaperRepository $newspaperRepository)
     {
     }
 
@@ -89,7 +89,7 @@ class CategoryService implements CategoryServiceInterface
     public function canBeDeleted(Category $category): bool
     {
         try {
-            $result = $this->recipeRepository->countByCategory($category);
+            $result = $this->newspaperRepository->countByCategory($category);
 
             return !($result > 0);
         } catch (NoResultException|NonUniqueResultException) {

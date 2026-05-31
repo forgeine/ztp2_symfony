@@ -1,4 +1,4 @@
-{# templates/recipe/rate.html.twig #}
+{# templates/newspaper/rate.html.twig #}
 
 {% extends 'base.html.twig' %}
 
@@ -6,7 +6,7 @@
 
 {% block body %}
     <h1>{{ 'label.rating2'|trans }}</h1>
-    <p>Oceń przepis: "{{ recipe.title }}"</p>
+    <p>Oceń newspaper: "{{ newspaper.title }}"</p>
     {{ form_start(form) }}
     {{ form_row(form.value) }}
     {{ form_end(form) }}

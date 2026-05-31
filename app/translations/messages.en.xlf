@@ -6,9 +6,9 @@
         <source>message.empty_list</source>
         <target>Lista is empty.</target>
       </trans-unit>
-      <trans-unit id="message.recipe_not_found">
-        <source>message.recipe_not_found</source>
-        <target>Recipe not found.</target>
+      <trans-unit id="message.newspaper_not_found">
+        <source>message.newspaper_not_found</source>
+        <target>Newspaper not found.</target>
       </trans-unit>
       <trans-unit id="message.user_updated_successfully">
         <source>message.user_updated_successfully</source>
@@ -42,25 +42,25 @@
         <source>message.deleted_comment_successfully</source>
         <target>Deleted comment.</target>
       </trans-unit>
-      <trans-unit id="message.created_recipe_successfully">
-        <source>message.created_recipe_successfully</source>
-        <target>Recipe successfully created.</target>
+      <trans-unit id="message.created_newspaper_successfully">
+        <source>message.created_newspaper_successfully</source>
+        <target>Newspaper successfully created.</target>
       </trans-unit>
-      <trans-unit id="message.recipe_no_permission">
-        <source>message.recipe_no_permission</source>
-        <target>No permissions for this recipe.</target>
+      <trans-unit id="message.newspaper_no_permission">
+        <source>message.newspaper_no_permission</source>
+        <target>No permissions for this newspaper.</target>
       </trans-unit>
-      <trans-unit id="message.edited_recipe_successfully">
-         <source>message.edited_recipe_successfully</source>
-         <target>Edited recipe successfully.</target>
+      <trans-unit id="message.edited_newspaper_successfully">
+         <source>message.edited_newspaper_successfully</source>
+         <target>Edited newspaper successfully.</target>
        </trans-unit>
-      <trans-unit id="message.deleted_recipe_successfully">
-        <source>message.deleted_recipe_successfully</source>
-        <target>Deleted recipe successfully.</target>
+      <trans-unit id="message.deleted_newspaper_successfully">
+        <source>message.deleted_newspaper_successfully</source>
+        <target>Deleted newspaper successfully.</target>
       </trans-unit>
       <trans-unit id="message.rated_successfully">
         <source>message.rated_successfully</source>
-        <target>Successfully rated recipe.</target>
+        <target>Successfully rated newspaper.</target>
       </trans-unit>
       <trans-unit id="message.edited_category_successfully">
         <source>message.edited_category_successfully</source>
@@ -70,9 +70,9 @@
         <source>message.created_category_successfully</source>
         <target>Successfully created category.</target>
       </trans-unit>
-      <trans-unit id="message.category_contains_recipes">
-        <source>message.category_contains_recipes</source>
-        <target>Category contains recipes.</target>
+      <trans-unit id="message.category_contains_newspapers">
+        <source>message.category_contains_newspapers</source>
+        <target>Category contains newspapers.</target>
       </trans-unit>
       <trans-unit id="message.deleted_category_successfully">
         <source>message.deleted_category_successfully</source>
@@ -90,9 +90,9 @@
         <source>message.edited_tag_successfully</source>
         <target>Edited tag successfully.</target>
       </trans-unit>
-     <trans-unit id="message.tag_contains_recipes">
-        <source>message.tag_contains_recipes</source>
-        <target>Tag contains recipes.</target>
+     <trans-unit id="message.tag_contains_newspapers">
+        <source>message.tag_contains_newspapers</source>
+        <target>Tag contains newspapers.</target>
       </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
@@ -182,17 +182,17 @@
         <source>title.profile_password</source>
         <target>Change profile password</target>
       </trans-unit>
-      <trans-unit id="title.recipe_list">
-        <source>title.recipe_list</source>
-        <target>Recipe List</target>
+      <trans-unit id="title.newspaper_list">
+        <source>title.newspaper_list</source>
+        <target>Newspaper List</target>
       </trans-unit>
-      <trans-unit id="title.recipe_view">
-        <source>title.recipe_view</source>
-        <target>Recipe #%id%</target>
+      <trans-unit id="title.newspaper_view">
+        <source>title.newspaper_view</source>
+        <target>Newspaper #%id%</target>
       </trans-unit>
-      <trans-unit id="title.recipe_details">
-         <source>title.recipe_details</source>
-         <target>Recipe details #%id%</target>
+      <trans-unit id="title.newspaper_details">
+         <source>title.newspaper_details</source>
+         <target>Newspaper details #%id%</target>
       </trans-unit>
       <trans-unit id="title.category_list">
          <source>title.category_list</source>
@@ -214,9 +214,9 @@
          <source>title.category_details</source>
          <target>Category Details </target>
       </trans-unit>
-     <trans-unit id="title.recipe_edit">
-         <source>title.recipe_edit</source>
-         <target>Edit Recipe</target>
+     <trans-unit id="title.newspaper_edit">
+         <source>title.newspaper_edit</source>
+         <target>Edit Newspaper</target>
       </trans-unit>
      <trans-unit id="title.category_edit">
          <source>title.category_edit</source>
@@ -230,13 +230,13 @@
          <source>title.category_delete</source>
          <target>Delete category?</target>
       </trans-unit>
-      <trans-unit id="title.recipe_delete">
-         <source>title.recipe_delete</source>
-         <target>Delete recipe?</target>
+      <trans-unit id="title.newspaper_delete">
+         <source>title.newspaper_delete</source>
+         <target>Delete newspaper?</target>
       </trans-unit>
-      <trans-unit id="title.recipe_create">
-         <source>title.recipe_create</source>
-         <target>Create Recipe</target>
+      <trans-unit id="title.newspaper_create">
+         <source>title.newspaper_create</source>
+         <target>Create Newspaper</target>
       </trans-unit>
      <trans-unit id="title.tag_edit">
          <source>title.tag_edit</source>
@@ -260,7 +260,7 @@
       </trans-unit>
       <trans-unit id="action.index">
          <source>action.index</source>
-          <target>Recipes</target>
+          <target>Newspapers</target>
       </trans-unit>
       <trans-unit id="action.category_index">
          <source>action.category_index</source>
@@ -288,7 +288,7 @@
       </trans-unit>
       <trans-unit id="action.own">
           <source>action.own</source>
-           <target>Owned recipes</target>
+           <target>Owned newspapers</target>
        </trans-unit>
       <trans-unit id="action.create">
           <source>action.create</source>
@@ -322,9 +322,9 @@
           <source>action.register</source>
            <target>Sign In</target>
        </trans-unit>
-      <trans-unit id="action.view_recipes">
-          <source>action.view_recipes</source>
-           <target>View recipes</target>
+      <trans-unit id="action.view_newspapers">
+          <source>action.view_newspapers</source>
+           <target>View newspapers</target>
        </trans-unit>
       <trans-unit id="action.rating_add">
           <source>action.rating_add</source>

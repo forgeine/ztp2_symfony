@@ -7,7 +7,7 @@ namespace App\Service;
 
 use App\Entity\Tag;
 // use App\Form\Type\TagType;
-use App\Repository\RecipeRepository;
+use App\Repository\NewspaperRepository;
 use App\Repository\TagRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
@@ -31,11 +31,11 @@ class TagService implements TagServiceInterface
     /**
      * Constructor.
      *
-     * @param TagRepository      $tagRepository    Tag repository
-     * @param PaginatorInterface $paginator        Paginator
-     * @param RecipeRepository   $recipeRepository Recipe repository
+     * @param TagRepository       $tagRepository       Tag repository
+     * @param PaginatorInterface  $paginator           Paginator
+     * @param NewspaperRepository $newspaperRepository Newspaper repository
      */
-    public function __construct(private readonly TagRepository $tagRepository, private readonly PaginatorInterface $paginator, private readonly RecipeRepository $recipeRepository)
+    public function __construct(private readonly TagRepository $tagRepository, private readonly PaginatorInterface $paginator, private readonly NewspaperRepository $newspaperRepository)
     {
     }
 
@@ -92,7 +92,7 @@ class TagService implements TagServiceInterface
     public function canBeDeleted(Tag $tag): bool
     {
         try {
-            $result = $this->recipeRepository->countBytag($tag);
+            $result = $this->newspaperRepository->countByTag($tag);
 
             return !($result > 0);
         } catch (NoResultException|NonUniqueResultException) {

@@ -1,14 +1,14 @@
 <?php
 /**
- * Recipe status.
+ * Newspaper status.
  */
 
 namespace App\Entity\Enum;
 
 /**
- * Enum RecipeStatus.
+ * Enum NewspaperStatus.
  */
-enum RecipeStatus: int
+enum NewspaperStatus: int
 {
     case PENDING = 1;
     case ACTIVE = 2;
@@ -33,7 +33,7 @@ enum RecipeStatus: int
     /**
      * Get all possible statuses as an array.
      *
-     * @return RecipeStatus[] status
+     * @return NewspaperStatus[] status
      */
     public static function getAllStatuses(): array
     {

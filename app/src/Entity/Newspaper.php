@@ -1,11 +1,11 @@
 <?php
 /**
- * Recipe entity.
+ * Newspaper entity.
  */
 
 namespace App\Entity;
 
-use App\Repository\RecipeRepository;
+use App\Repository\NewspaperRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
@@ -16,13 +16,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class Recipe.
+ * Class Newspaper.
  *
  * @psalm-suppress MissingConstructor
  */
-#[ORM\Entity(repositoryClass: RecipeRepository::class)]
-#[ORM\Table(name: 'recipes')]
-class Recipe
+#[ORM\Entity(repositoryClass: NewspaperRepository::class)]
+#[ORM\Table(name: 'newspapers')]
+class Newspaper
 {
     /**
      * Primary key.
@@ -102,7 +102,7 @@ class Recipe
      */
     #[Assert\Valid]
     #[ORM\ManyToMany(targetEntity: Tag::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
-    #[ORM\JoinTable(name: 'recipes_tags')]
+    #[ORM\JoinTable(name: 'newspapers_tags')]
     private Collection $tags;
 
     /**
@@ -122,7 +122,7 @@ class Recipe
      * @var Collection<int, Comment> Comments
      */
     #[Assert\Valid]
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Comment::class, cascade: ['persist', 'remove'], orphanRemoval: true)] #[ORM\JoinTable(name: 'recipes_comments')]
+    #[ORM\OneToMany(mappedBy: 'newspaper', targetEntity: Comment::class, cascade: ['persist', 'remove'], orphanRemoval: true)] #[ORM\JoinTable(name: 'newspapers_comments')]
     private Collection $comments;
 
     /**
@@ -130,7 +130,7 @@ class Recipe
      *
      * @var Collection<int, Rating> Ratings
      */
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Rating::class, cascade: ['remove'])]
+    #[ORM\OneToMany(mappedBy: 'newspaper', targetEntity: Rating::class, cascade: ['remove'])]
     private Collection $ratings;
 
     /**
@@ -439,11 +439,11 @@ class Recipe
     /**
      * Setter for averageRating.
      *
-     * @param float $averageRating average Rating
+     * @param float|null $averageRating average Rating
      *
      * @return $this average Rating
      */
-    public function setAverageRating(float $averageRating): self
+    public function setAverageRating(?float $averageRating): self
     {
         $this->averageRating = $averageRating;
 
@@ -471,7 +471,7 @@ class Recipe
     {
         if (!$this->ratings->contains($rating)) {
             $this->ratings[] = $rating;
-            $rating->setRecipe($this);
+            $rating->setNewspaper($this);
         }
 
         return $this;
@@ -487,8 +487,8 @@ class Recipe
     public function removeRating(Rating $rating): self
     {
         if ($this->ratings->removeElement($rating)) {
-            if ($rating->getRecipe() === $this) {
-                $rating->setRecipe(null);
+            if ($rating->getNewspaper() === $this) {
+                $rating->setNewspaper(null);
             }
         }
 

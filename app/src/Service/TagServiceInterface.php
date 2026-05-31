@@ -48,4 +48,13 @@ interface TagServiceInterface
      * @return bool Result
      */
     public function canBeDeleted(Tag $tag): bool;
+
+    /**
+     * Find one by id.
+     *
+     * @param int $id Tag id
+     *
+     * @return Tag|null Tag entity
+     */
+    public function findOneById(int $id): ?Tag;
 }
