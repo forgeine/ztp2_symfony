@@ -10,8 +10,6 @@ use App\Entity\Category;
 use App\Entity\Recipe;
 use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -42,13 +40,11 @@ class RecipeRepository extends ServiceEntityRepository
     /**
      * Constructor.
      *
-     * @param ManagerRegistry        $registry      ManagerRegistry
-     * @param EntityManagerInterface $entityManager EntityManagerInterface
+     * @param ManagerRegistry $registry ManagerRegistry
      */
-    public function __construct(ManagerRegistry $registry, EntityManagerInterface $entityManager)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Recipe::class);
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -130,9 +126,8 @@ class RecipeRepository extends ServiceEntityRepository
      */
     public function save(Recipe $recipe): void
     {
-        assert($this->_em instanceof EntityManager);
-        $this->_em->persist($recipe);
-        $this->_em->flush();
+        $this->getEntityManager()->persist($recipe);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -219,7 +214,7 @@ class RecipeRepository extends ServiceEntityRepository
      */
     private function calculateAverageRating(Recipe $recipe): void
     {
-        $entityManager = $this->doctrine->getManager();
+        $entityManager = $this->getEntityManager();
         $sum = 0;
         $ratings = $recipe->getRatings();
         $count = $ratings->count();

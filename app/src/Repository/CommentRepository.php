@@ -33,8 +33,8 @@ class CommentRepository extends ServiceEntityRepository
      */
     public function save(Comment $comment): void
     {
-        $this->_em->persist($comment);
-        $this->_em->flush();
+        $this->getEntityManager()->persist($comment);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -46,7 +46,7 @@ class CommentRepository extends ServiceEntityRepository
      */
     public function delete(Comment $comment): void
     {
-        $this->_em->remove($comment);
-        $this->_em->flush();
+        $this->getEntityManager()->remove($comment);
+        $this->getEntityManager()->flush();
     }
 }

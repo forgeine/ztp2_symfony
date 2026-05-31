@@ -38,7 +38,7 @@ class RatingRepository extends ServiceEntityRepository
      */
     public function save(Rating $rating): void
     {
-        $this->_em->persist($rating);
-        $this->_em->flush();
+        $this->getEntityManager()->persist($rating);
+        $this->getEntityManager()->flush();
     }
 }

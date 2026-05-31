@@ -44,7 +44,7 @@ class RegistrationController extends AbstractController
             $this->registrationService->registerUser($form->getData());
             $this->addFlash('success', $this->registrationService->getSuccessMessage());
 
-            return $this->redirectToRoute('profile_index');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('security/register.html.twig', [
