@@ -58,7 +58,7 @@ class NewspaperFixtures extends AbstractBaseFixtures implements DependentFixture
             $newspaper->setCategory($category);
             $tags = $this->getRandomReferences(
                 'tags',
-                $this->faker->numberBetween(0, 5)
+                $this->faker->numberBetween(2, 5)
             );
             foreach ($tags as $tag) {
                 $newspaper->addTag($tag);

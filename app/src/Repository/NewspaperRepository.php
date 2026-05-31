@@ -61,7 +61,7 @@ class NewspaperRepository extends ServiceEntityRepository
                 'partial newspaper.{id, createdAt, updatedAt, title, content, averageRating}',
                 'partial category.{id, title}',
                 'partial tags.{id, title}',
-                'partial author.{id, email}'
+                'author'
             )
             ->join('newspaper.category', 'category')
             ->leftJoin('newspaper.tags', 'tags')
@@ -222,7 +222,7 @@ class NewspaperRepository extends ServiceEntityRepository
             foreach ($ratings as $rating) {
                 $sum += $rating->getValue();
             }
-            $averageRating = $sum / $count;
+            $averageRating = round($sum / $count, 2);
         } else {
             $averageRating = null;
         }

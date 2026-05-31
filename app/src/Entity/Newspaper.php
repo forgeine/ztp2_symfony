@@ -511,7 +511,7 @@ class Newspaper
             }
         }
         if ($count > 0) {
-            $averageRating = $sum / $count;
+            $averageRating = round($sum / $count, 2);
             $this->setAverageRating($averageRating);
         } else {
             $this->setAverageRating(0);
