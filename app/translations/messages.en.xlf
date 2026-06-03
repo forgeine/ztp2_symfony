@@ -44,23 +44,23 @@
       </trans-unit>
       <trans-unit id="message.created_newspaper_successfully">
         <source>message.created_newspaper_successfully</source>
-        <target>Newspaper successfully created.</target>
+        <target>Article successfully created.</target>
       </trans-unit>
       <trans-unit id="message.newspaper_no_permission">
         <source>message.newspaper_no_permission</source>
-        <target>No permissions for this newspaper.</target>
+        <target>No permissions for this article.</target>
       </trans-unit>
       <trans-unit id="message.edited_newspaper_successfully">
          <source>message.edited_newspaper_successfully</source>
-         <target>Edited newspaper successfully.</target>
+         <target>Edited article successfully.</target>
        </trans-unit>
       <trans-unit id="message.deleted_newspaper_successfully">
         <source>message.deleted_newspaper_successfully</source>
-        <target>Deleted newspaper successfully.</target>
+        <target>Deleted article successfully.</target>
       </trans-unit>
       <trans-unit id="message.rated_successfully">
         <source>message.rated_successfully</source>
-        <target>Successfully rated newspaper.</target>
+        <target>Successfully rated article.</target>
       </trans-unit>
       <trans-unit id="message.edited_category_successfully">
         <source>message.edited_category_successfully</source>
@@ -72,7 +72,7 @@
       </trans-unit>
       <trans-unit id="message.category_contains_newspapers">
         <source>message.category_contains_newspapers</source>
-        <target>Category contains newspapers.</target>
+        <target>Category contains articles.</target>
       </trans-unit>
       <trans-unit id="message.deleted_category_successfully">
         <source>message.deleted_category_successfully</source>
@@ -92,7 +92,7 @@
       </trans-unit>
      <trans-unit id="message.tag_contains_newspapers">
         <source>message.tag_contains_newspapers</source>
-        <target>Tag contains newspapers.</target>
+        <target>Tag contains articles.</target>
       </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
@@ -184,15 +184,15 @@
       </trans-unit>
       <trans-unit id="title.newspaper_list">
         <source>title.newspaper_list</source>
-        <target>Newspaper List</target>
+        <target>Article List</target>
       </trans-unit>
       <trans-unit id="title.newspaper_view">
         <source>title.newspaper_view</source>
-        <target>Newspaper #%id%</target>
+        <target>Article #%id%</target>
       </trans-unit>
       <trans-unit id="title.newspaper_details">
          <source>title.newspaper_details</source>
-         <target>Newspaper details #%id%</target>
+         <target>Article details #%id%</target>
       </trans-unit>
       <trans-unit id="title.category_list">
          <source>title.category_list</source>
@@ -216,7 +216,7 @@
       </trans-unit>
      <trans-unit id="title.newspaper_edit">
          <source>title.newspaper_edit</source>
-         <target>Edit Newspaper</target>
+         <target>Edit article</target>
       </trans-unit>
      <trans-unit id="title.category_edit">
          <source>title.category_edit</source>
@@ -232,11 +232,11 @@
       </trans-unit>
       <trans-unit id="title.newspaper_delete">
          <source>title.newspaper_delete</source>
-         <target>Delete newspaper?</target>
+         <target>Delete article?</target>
       </trans-unit>
       <trans-unit id="title.newspaper_create">
          <source>title.newspaper_create</source>
-         <target>Create Newspaper</target>
+         <target>Create article</target>
       </trans-unit>
      <trans-unit id="title.tag_edit">
          <source>title.tag_edit</source>
@@ -260,7 +260,7 @@
       </trans-unit>
       <trans-unit id="action.index">
          <source>action.index</source>
-          <target>Newspapers</target>
+          <target>Articles</target>
       </trans-unit>
       <trans-unit id="action.category_index">
          <source>action.category_index</source>
@@ -288,7 +288,7 @@
       </trans-unit>
       <trans-unit id="action.own">
           <source>action.own</source>
-           <target>Owned newspapers</target>
+           <target>Owned articles</target>
        </trans-unit>
       <trans-unit id="action.create">
           <source>action.create</source>
@@ -324,7 +324,7 @@
        </trans-unit>
       <trans-unit id="action.view_newspapers">
           <source>action.view_newspapers</source>
-           <target>View newspapers</target>
+           <target>View articles</target>
        </trans-unit>
       <trans-unit id="action.rating_add">
           <source>action.rating_add</source>

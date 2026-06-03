@@ -8,7 +8,7 @@
       </trans-unit>
       <trans-unit id="message.newspaper_not_found">
         <source>message.newspaper_not_found</source>
-        <target>Gazeta nie znaleziona.</target>
+        <target>Artykuł nie znaleziony.</target>
       </trans-unit>
       <trans-unit id="message.user_updated_successfully">
         <source>message.user_updated_successfully</source>
@@ -44,23 +44,23 @@
       </trans-unit>
       <trans-unit id="message.created_newspaper_successfully">
         <source>message.created_newspaper_successfully</source>
-        <target>Pomyślnie utworzono nową gazetę.</target>
+        <target>Pomyślnie utworzono nowy artykuł.</target>
       </trans-unit>
       <trans-unit id="message.newspaper_no_permission">
         <source>message.newspaper_no_permission</source>
-        <target>Brak uprawnień do tej gazety.</target>
+        <target>Brak uprawnień do tego artykułu.</target>
       </trans-unit>
       <trans-unit id="message.edited_newspaper_successfully">
          <source>message.edited_newspaper_successfully</source>
-         <target>Pomyślnie edytowano gazetę.</target>
+         <target>Pomyślnie edytowano artykuł.</target>
        </trans-unit>
       <trans-unit id="message.deleted_newspaper_successfully">
         <source>message.deleted_newspaper_successfully</source>
-        <target>Pomyślnie usunięto gazetę.</target>
+        <target>Pomyślnie usunięto artykuł.</target>
       </trans-unit>
       <trans-unit id="message.rated_successfully">
         <source>message.rated_successfully</source>
-        <target>Pomyślnie oceniono gazetę.</target>
+        <target>Pomyślnie oceniono artykuł.</target>
       </trans-unit>
       <trans-unit id="message.edited_category_successfully">
         <source>message.edited_category_successfully</source>
@@ -72,7 +72,7 @@
       </trans-unit>
       <trans-unit id="message.category_contains_newspapers">
         <source>message.category_contains_newspapers</source>
-        <target>Kategoria zawiera gazety.</target>
+        <target>Kategoria zawiera artykuły.</target>
       </trans-unit>
       <trans-unit id="message.deleted_category_successfully">
         <source>message.deleted_category_successfully</source>
@@ -92,7 +92,7 @@
       </trans-unit>
      <trans-unit id="message.tag_contains_newspapers">
         <source>message.tag_contains_newspapers</source>
-        <target>Tag zawiera gazety.</target>
+        <target>Tag zawiera artykuły.</target>
       </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
@@ -184,15 +184,15 @@
       </trans-unit>
       <trans-unit id="title.newspaper_list">
         <source>title.newspaper_list</source>
-        <target>Lista Gazet</target>
+        <target>Lista artykułów</target>
       </trans-unit>
       <trans-unit id="title.newspaper_view">
         <source>title.newspaper_view</source>
-        <target>Gazeta #%id%</target>
+        <target>Artykuł #%id%</target>
       </trans-unit>
       <trans-unit id="title.newspaper_details">
          <source>title.newspaper_details</source>
-         <target>Detale gazety #%id%</target>
+         <target>Detale artykułu #%id%</target>
       </trans-unit>
       <trans-unit id="title.category_list">
          <source>title.category_list</source>
@@ -216,7 +216,7 @@
       </trans-unit>
      <trans-unit id="title.newspaper_edit">
          <source>title.newspaper_edit</source>
-         <target>Edycja Gazety</target>
+         <target>Edycja Artykułu</target>
       </trans-unit>
      <trans-unit id="title.category_edit">
          <source>title.category_edit</source>
@@ -232,11 +232,11 @@
       </trans-unit>
       <trans-unit id="title.newspaper_delete">
          <source>title.newspaper_delete</source>
-         <target>Usunąć gazetę?</target>
+         <target>Usunąć artykuł?</target>
       </trans-unit>
       <trans-unit id="title.newspaper_create">
          <source>title.newspaper_create</source>
-         <target>Dodaj Gazetę</target>
+         <target>Dodaj Artykuł</target>
       </trans-unit>
      <trans-unit id="title.tag_edit">
          <source>title.tag_edit</source>
@@ -260,7 +260,7 @@
       </trans-unit>
       <trans-unit id="action.index">
          <source>action.index</source>
-          <target>Gazety</target>
+          <target>Artykuły</target>
       </trans-unit>
       <trans-unit id="action.category_index">
          <source>action.category_index</source>
@@ -288,7 +288,7 @@
       </trans-unit>
       <trans-unit id="action.own">
           <source>action.own</source>
-           <target>Własne gazety</target>
+           <target>Własne artykuły</target>
        </trans-unit>
       <trans-unit id="action.create">
           <source>action.create</source>
@@ -324,7 +324,7 @@
        </trans-unit>
       <trans-unit id="action.view_newspapers">
           <source>action.view_newspapers</source>
-           <target>Zobacz gazety</target>
+           <target>Zobacz artykuły</target>
        </trans-unit>
       <trans-unit id="action.rating_add">
           <source>action.rating_add</source>
