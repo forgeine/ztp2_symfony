@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'action.delete'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'action.delete'|trans }}</h1>
+    <p>
+        Usunięcie użytkownika {{ user.email }}, usunie także jego gazety. Na pewno usunąć?
+    </p>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'action.delete'|trans }}" class="btn btn-danger">
+        <a href="{{ path('edit_users') }}" class="btn btn-dark">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
