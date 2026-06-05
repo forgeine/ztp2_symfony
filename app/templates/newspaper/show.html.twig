@@ -38,8 +38,8 @@
         <form method="post">
             {{ form_start(commentForm) }}
             <div class="form-group">
-                {{ form_label(commentForm.content, 'label.comment'|trans) }}
-                {{ form_widget(commentForm.content, {'attr': {'class': 'form-control', 'placeholder': 'label.content'|trans}}) }}
+                {{ form_label(commentForm.content, 'label.comment') }}
+                {{ form_widget(commentForm.content, {'attr': {'class': 'form-control', 'placeholder': 'label.content'}}) }}
             </div>
             <button style="margin-top: 10px;" class="btn btn-primary" type="submit">{{ button_label|default('action.create'|trans) }}</button>
             {{ form_end(commentForm) }}
@@ -51,7 +51,7 @@
     <ul>
         {% for comment in comments %}
             <li>
-                <strong>{{ comment.author.email }}</strong>: {{ comment.createdAt|date('Y-m-d H:i') }}
+                <strong>{{ comment.author.email }}</strong>: {{ comment.createdAt|format_datetime(pattern='d MMMM y HH:mm', locale='pl') }}
                 <br>
                 <medium>{{ comment.content }}</medium>
                 {% if is_granted('ROLE_ADMIN') %}

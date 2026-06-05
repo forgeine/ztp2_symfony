@@ -10,6 +10,7 @@ use App\Form\Type\AdminEditType;
 use App\Form\Type\AdminPasswordType;
 use App\Service\AdminUserServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -103,12 +104,13 @@ class AdminUserController extends AbstractController
     /**
      * Admin tool for deleting users and their content.
      *
-     * @param User $user entity
+     * @param User    $user    entity
+     * @param Request $request request
      *
      * @return Response delete user of id
      */
-    #[Route('/delete/{id}', name: 'delete_user', methods: ['POST'])]
-    public function delete(User $user): Response
+    #[Route('/delete/{id}', name: 'delete_user', methods: ['GET', 'POST'])]
+    public function delete(User $user, Request $request): Response
     {
         $currentUser = $this->getUser();
         if ($currentUser->getId() === $user->getId()) {
@@ -116,9 +118,26 @@ class AdminUserController extends AbstractController
 
             return $this->redirectToRoute('edit_users');
         }
-        $this->adminUserService->deleteUser($user);
-        $this->addFlash('success', $this->translator->trans('message.user_deleted_successfully'));
+        $form = $this->createForm(
+            FormType::class,
+            $user,
+            [
+                'method' => 'POST',
+                'action' => $this->generateUrl('delete_user', ['id' => $user->getId()]),
+            ]
+        );
+        $form->handleRequest($request);
 
-        return $this->redirectToRoute('edit_users');
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->adminUserService->deleteUser($user);
+            $this->addFlash('success', $this->translator->trans('message.user_deleted_successfully'));
+
+            return $this->redirectToRoute('edit_users');
+        }
+
+        return $this->render('profile/admin/delete.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user,
+        ]);
     }
 }
