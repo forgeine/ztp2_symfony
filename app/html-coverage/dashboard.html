@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/wwwroot/app/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=14.1.9" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=14.1.9" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/home/wwwroot/app/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Classes</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="267.5" x2="780" y2="267.5" class="chart-grid"/>
+ <text x="52" y="267.5" text-anchor="end" dominant-baseline="middle" class="chart-label">10</text>
+ <line x1="60" y1="185.0" x2="780" y2="185.0" class="chart-grid"/>
+ <text x="52" y="185.0" text-anchor="end" dominant-baseline="middle" class="chart-label">20</text>
+ <line x1="60" y1="102.5" x2="780" y2="102.5" class="chart-grid"/>
+ <text x="52" y="102.5" text-anchor="end" dominant-baseline="middle" class="chart-label">30</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">40</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="Controller/NewspaperController.php.html#38"><circle cx="110.4" cy="86.0" r="20.0" class="bubble-danger"><title>App\Controller\NewspaperController — Coverage: 7.0% | Lines: 157 | Complexity: 32</title></circle></a>
+ <a href="Controller/CategoryController.php.html#24"><circle cx="780.0" cy="193.2" r="14.4" class="bubble-success"><title>App\Controller\CategoryController — Coverage: 100.0% | Lines: 81 | Complexity: 19</title></circle></a>
+ <a href="Controller/TagController.php.html#24"><circle cx="60.0" cy="201.5" r="14.2" class="bubble-danger"><title>App\Controller\TagController — Coverage: 0.0% | Lines: 79 | Complexity: 18</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#34"><circle cx="154.4" cy="201.5" r="12.5" class="bubble-danger"><title>App\Repository\NewspaperRepository — Coverage: 13.1% | Lines: 61 | Complexity: 18</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#19"><circle cx="60.0" cy="251.0" r="12.2" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures — Coverage: 0.0% | Lines: 58 | Complexity: 12</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#24"><circle cx="780.0" cy="251.0" r="10.8" class="bubble-success"><title>App\Controller\AdminUserController — Coverage: 100.0% | Lines: 46 | Complexity: 12</title></circle></a>
+ <a href="Form/Type/NewspaperType.php.html#21"><circle cx="60.0" cy="317.0" r="10.7" class="bubble-danger"><title>App\Form\Type\NewspaperType — Coverage: 0.0% | Lines: 45 | Complexity: 4</title></circle></a>
+ <a href="DataFixtures/AbstractBaseFixtures.php.html#19"><circle cx="382.8" cy="275.8" r="8.6" class="bubble-danger"><title>App\DataFixtures\AbstractBaseFixtures — Coverage: 44.8% | Lines: 29 | Complexity: 9</title></circle></a>
+ <a href="DataFixtures/UserFixtures.php.html#18"><circle cx="754.3" cy="317.0" r="8.4" class="bubble-success"><title>App\DataFixtures\UserFixtures — Coverage: 96.4% | Lines: 28 | Complexity: 4</title></circle></a>
+ <a href="Service/AdminUserService.php.html#21"><circle cx="780.0" cy="234.5" r="8.0" class="bubble-success"><title>App\Service\AdminUserService — Coverage: 100.0% | Lines: 25 | Complexity: 14</title></circle></a>
+ <a href="Controller/UserProfileController.php.html#22"><circle cx="780.0" cy="275.8" r="7.8" class="bubble-success"><title>App\Controller\UserProfileController — Coverage: 100.0% | Lines: 24 | Complexity: 9</title></circle></a>
+ <a href="Service/NewspaperService.php.html#30"><circle cx="90.0" cy="251.0" r="7.8" class="bubble-danger"><title>App\Service\NewspaperService — Coverage: 4.2% | Lines: 24 | Complexity: 12</title></circle></a>
+ <a href="DataFixtures/CategoryFixtures.php.html#16"><circle cx="780.0" cy="333.5" r="7.1" class="bubble-success"><title>App\DataFixtures\CategoryFixtures — Coverage: 100.0% | Lines: 20 | Complexity: 2</title></circle></a>
+ <a href="DataFixtures/TagFixtures.php.html#16"><circle cx="60.0" cy="333.5" r="7.1" class="bubble-danger"><title>App\DataFixtures\TagFixtures — Coverage: 0.0% | Lines: 20 | Complexity: 2</title></circle></a>
+ <a href="Form/DataTransformer/TagsDataTransformer.php.html#20"><circle cx="60.0" cy="284.0" r="6.8" class="bubble-danger"><title>App\Form\DataTransformer\TagsDataTransformer — Coverage: 0.0% | Lines: 18 | Complexity: 8</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#20"><circle cx="60.0" cy="308.8" r="6.6" class="bubble-danger"><title>App\Repository\TaskRepository — Coverage: 0.0% | Lines: 17 | Complexity: 5</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#17"><circle cx="144.7" cy="242.8" r="6.6" class="bubble-danger"><title>App\Security\Voter\NewspaperVoter — Coverage: 11.8% | Lines: 17 | Complexity: 13</title></circle></a>
+ <a href="Form/Type/RatingType.php.html#19"><circle cx="60.0" cy="333.5" r="6.4" class="bubble-danger"><title>App\Form\Type\RatingType — Coverage: 0.0% | Lines: 16 | Complexity: 2</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#25"><circle cx="780.0" cy="292.2" r="6.4" class="bubble-success"><title>App\Security\LoginFormAuthenticator — Coverage: 100.0% | Lines: 16 | Complexity: 7</title></circle></a>
+ <a href="Form/Type/UserPasswordType.php.html#18"><circle cx="780.0" cy="333.5" r="6.2" class="bubble-success"><title>App\Form\Type\UserPasswordType — Coverage: 100.0% | Lines: 15 | Complexity: 2</title></circle></a>
+ <a href="Security/Voter/TagVoter.php.html#17"><circle cx="162.9" cy="267.5" r="6.0" class="bubble-danger"><title>App\Security\Voter\TagVoter — Coverage: 14.3% | Lines: 14 | Complexity: 10</title></circle></a>
+ <a href="Security/Voter/CategoryVoter.php.html#17"><circle cx="780.0" cy="267.5" r="5.8" class="bubble-success"><title>App\Security\Voter\CategoryVoter — Coverage: 100.0% | Lines: 13 | Complexity: 10</title></circle></a>
+ <a href="Service/CategoryService.php.html#22"><circle cx="780.0" cy="292.2" r="5.8" class="bubble-success"><title>App\Service\CategoryService — Coverage: 100.0% | Lines: 13 | Complexity: 7</title></circle></a>
+ <a href="Service/TagService.php.html#23"><circle cx="115.4" cy="292.2" r="5.8" class="bubble-danger"><title>App\Service\TagService — Coverage: 7.7% | Lines: 13 | Complexity: 7</title></circle></a>
+ <a href="Service/TaskService.php.html#17"><circle cx="60.0" cy="317.0" r="5.8" class="bubble-danger"><title>App\Service\TaskService — Coverage: 0.0% | Lines: 13 | Complexity: 4</title></circle></a>
+ <a href="Form/Type/AdminPasswordType.php.html#18"><circle cx="780.0" cy="333.5" r="5.3" class="bubble-success"><title>App\Form\Type\AdminPasswordType — Coverage: 100.0% | Lines: 11 | Complexity: 2</title></circle></a>
+ <a href="Form/Type/CategoryType.php.html#18"><circle cx="780.0" cy="325.2" r="5.3" class="bubble-success"><title>App\Form\Type\CategoryType — Coverage: 100.0% | Lines: 11 | Complexity: 3</title></circle></a>
+ <a href="Form/Type/TagType.php.html#18"><circle cx="60.0" cy="325.2" r="5.3" class="bubble-danger"><title>App\Form\Type\TagType — Coverage: 0.0% | Lines: 11 | Complexity: 3</title></circle></a>
+ <a href="Service/RegistrationService.php.html#18"><circle cx="780.0" cy="325.2" r="5.3" class="bubble-success"><title>App\Service\RegistrationService — Coverage: 100.0% | Lines: 11 | Complexity: 3</title></circle></a>
+ <a href="Controller/RegistrationController.php.html#20"><circle cx="780.0" cy="317.0" r="5.0" class="bubble-success"><title>App\Controller\RegistrationController — Coverage: 100.0% | Lines: 10 | Complexity: 4</title></circle></a>
+ <a href="Form/Type/RegistrationFormType.php.html#20"><circle cx="780.0" cy="333.5" r="5.0" class="bubble-success"><title>App\Form\Type\RegistrationFormType — Coverage: 100.0% | Lines: 10 | Complexity: 2</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#26"><circle cx="780.0" cy="308.8" r="4.8" class="bubble-success"><title>App\Repository\CategoryRepository — Coverage: 100.0% | Lines: 9 | Complexity: 5</title></circle></a>
+ <a href="Repository/TagRepository.php.html#26"><circle cx="140.0" cy="308.8" r="4.8" class="bubble-danger"><title>App\Repository\TagRepository — Coverage: 11.1% | Lines: 9 | Complexity: 5</title></circle></a>
+ <a href="Form/Type/CommentType.php.html#18"><circle cx="60.0" cy="333.5" r="4.2" class="bubble-danger"><title>App\Form\Type\CommentType — Coverage: 0.0% | Lines: 7 | Complexity: 2</title></circle></a>
+ <a href="Resolver/NewspaperListInputFiltersDtoResolver.php.html#18"><circle cx="368.6" cy="325.2" r="4.2" class="bubble-danger"><title>App\Resolver\NewspaperListInputFiltersDtoResolver — Coverage: 42.9% | Lines: 7 | Complexity: 3</title></circle></a>
+ <a href="Service/UserProfileService.php.html#16"><circle cx="780.0" cy="308.8" r="4.2" class="bubble-success"><title>App\Service\UserProfileService — Coverage: 100.0% | Lines: 7 | Complexity: 5</title></circle></a>
+ <a href="Form/Type/AdminEditType.php.html#19"><circle cx="780.0" cy="333.5" r="4.0" class="bubble-success"><title>App\Form\Type\AdminEditType — Coverage: 100.0% | Lines: 6 | Complexity: 2</title></circle></a>
+ <a href="Form/Type/UserEditType.php.html#19"><circle cx="780.0" cy="333.5" r="4.0" class="bubble-success"><title>App\Form\Type\UserEditType — Coverage: 100.0% | Lines: 6 | Complexity: 2</title></circle></a>
+ <a href="Repository/UserRepository.php.html#21"><circle cx="780.0" cy="325.2" r="4.0" class="bubble-success"><title>App\Repository\UserRepository — Coverage: 100.0% | Lines: 6 | Complexity: 3</title></circle></a>
+ <a href="Repository/CommentRepository.php.html#16"><circle cx="204.0" cy="325.2" r="4.0" class="bubble-danger"><title>App\Repository\CommentRepository — Coverage: 20.0% | Lines: 5 | Complexity: 3</title></circle></a>
+ <a href="Controller/SecurityController.php.html#17"><circle cx="780.0" cy="333.5" r="4.0" class="bubble-success"><title>App\Controller\SecurityController — Coverage: 100.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="Repository/RecordRepository.php.html#12"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Repository\RecordRepository — Coverage: 0.0% | Lines: 4 | Complexity: 4</title></circle></a>
+ <a href="Repository/RatingRepository.php.html#21"><circle cx="300.0" cy="333.5" r="4.0" class="bubble-danger"><title>App\Repository\RatingRepository — Coverage: 33.3% | Lines: 3 | Complexity: 2</title></circle></a>
+ <a href="DataFixtures/AppFixtures.php.html#15"><circle cx="60.0" cy="341.8" r="4.0" class="bubble-danger"><title>App\DataFixtures\AppFixtures — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Dto/NewspaperListFiltersDto.php.html#16"><circle cx="60.0" cy="341.8" r="4.0" class="bubble-danger"><title>App\Dto\NewspaperListFiltersDto — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Dto/NewspaperListInputFiltersDto.php.html#12"><circle cx="60.0" cy="341.8" r="4.0" class="bubble-danger"><title>App\Dto\NewspaperListInputFiltersDto — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Util/Calculator.php.html#12"><circle cx="780.0" cy="341.8" r="4.0" class="bubble-success"><title>App\Util\Calculator — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Class</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="Controller/NewspaperController.php.html#38">App\Controller\NewspaperController</a></td><td class="text-right">855.49</td><td class="text-right">7.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#24">App\Controller\TagController</a></td><td class="text-right">342</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#34">App\Repository\NewspaperRepository</a></td><td class="text-right">230.51</td><td class="text-right">13.1%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#19">App\DataFixtures\NewspaperFixtures</a></td><td class="text-right">156</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#30">App\Service\NewspaperService</a></td><td class="text-right">138.74</td><td class="text-right">4.2%</td></tr>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#17">App\Security\Voter\NewspaperVoter</a></td><td class="text-right">129.10</td><td class="text-right">11.8%</td></tr>
+  <tr><td><a href="Security/Voter/TagVoter.php.html#17">App\Security\Voter\TagVoter</a></td><td class="text-right">72.97</td><td class="text-right">14.3%</td></tr>
+  <tr><td><a href="Form/DataTransformer/TagsDataTransformer.php.html#20">App\Form\DataTransformer\TagsDataTransformer</a></td><td class="text-right">72</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#23">App\Service\TagService</a></td><td class="text-right">45.54</td><td class="text-right">7.7%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#20">App\Repository\TaskRepository</a></td><td class="text-right">30</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#19">App\DataFixtures\AbstractBaseFixtures</a></td><td class="text-right">22.60</td><td class="text-right">44.8%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#26">App\Repository\TagRepository</a></td><td class="text-right">22.56</td><td class="text-right">11.1%</td></tr>
+  <tr><td><a href="Form/Type/NewspaperType.php.html#21">App\Form\Type\NewspaperType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/RecordRepository.php.html#12">App\Repository\RecordRepository</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TaskService.php.html#17">App\Service\TaskService</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#24">App\Controller\CategoryController</a></td><td class="text-right">19</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#21">App\Service\AdminUserService</a></td><td class="text-right">14</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#24">App\Controller\AdminUserController</a></td><td class="text-right">12</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/TagType.php.html#18">App\Form\Type\TagType</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/CategoryVoter.php.html#17">App\Security\Voter\CategoryVoter</a></td><td class="text-right">10</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/UserProfileController.php.html#22">App\Controller\UserProfileController</a></td><td class="text-right">9</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CommentRepository.php.html#16">App\Repository\CommentRepository</a></td><td class="text-right">7.61</td><td class="text-right">20.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#25">App\Security\LoginFormAuthenticator</a></td><td class="text-right">7</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#22">App\Service\CategoryService</a></td><td class="text-right">7</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/TagFixtures.php.html#16">App\DataFixtures\TagFixtures</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/CommentType.php.html#18">App\Form\Type\CommentType</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/RatingType.php.html#19">App\Form\Type\RatingType</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#26">App\Repository\CategoryRepository</a></td><td class="text-right">5</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/UserProfileService.php.html#16">App\Service\UserProfileService</a></td><td class="text-right">5</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Resolver/NewspaperListInputFiltersDtoResolver.php.html#18">App\Resolver\NewspaperListInputFiltersDtoResolver</a></td><td class="text-right">4.68</td><td class="text-right">42.9%</td></tr>
+  <tr><td><a href="Controller/RegistrationController.php.html#20">App\Controller\RegistrationController</a></td><td class="text-right">4</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/UserFixtures.php.html#18">App\DataFixtures\UserFixtures</a></td><td class="text-right">4</td><td class="text-right">96.4%</td></tr>
+  <tr><td><a href="Repository/RatingRepository.php.html#21">App\Repository\RatingRepository</a></td><td class="text-right">3.19</td><td class="text-right">33.3%</td></tr>
+  <tr><td><a href="Form/Type/CategoryType.php.html#18">App\Form\Type\CategoryType</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/UserRepository.php.html#21">App\Repository\UserRepository</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/RegistrationService.php.html#18">App\Service\RegistrationService</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/SecurityController.php.html#17">App\Controller\SecurityController</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/AppFixtures.php.html#15">App\DataFixtures\AppFixtures</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/CategoryFixtures.php.html#16">App\DataFixtures\CategoryFixtures</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Dto/NewspaperListFiltersDto.php.html#16">App\Dto\NewspaperListFiltersDto</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Dto/NewspaperListInputFiltersDto.php.html#12">App\Dto\NewspaperListInputFiltersDto</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminEditType.php.html#19">App\Form\Type\AdminEditType</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminPasswordType.php.html#18">App\Form\Type\AdminPasswordType</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/RegistrationFormType.php.html#20">App\Form\Type\RegistrationFormType</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserEditType.php.html#19">App\Form\Type\UserEditType</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserPasswordType.php.html#18">App\Form\Type\UserPasswordType</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Util/Calculator.php.html#12">App\Util\Calculator</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Kernel.php.html#8">App\Kernel</a></td><td class="text-right">0</td><td class="text-right">100.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Methods</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="284.0" x2="780" y2="284.0" class="chart-grid"/>
+ <text x="52" y="284.0" text-anchor="end" dominant-baseline="middle" class="chart-label">2</text>
+ <line x1="60" y1="218.0" x2="780" y2="218.0" class="chart-grid"/>
+ <text x="52" y="218.0" text-anchor="end" dominant-baseline="middle" class="chart-label">4</text>
+ <line x1="60" y1="152.0" x2="780" y2="152.0" class="chart-grid"/>
+ <text x="52" y="152.0" text-anchor="end" dominant-baseline="middle" class="chart-label">6</text>
+ <line x1="60" y1="86.0" x2="780" y2="86.0" class="chart-grid"/>
+ <text x="52" y="86.0" text-anchor="end" dominant-baseline="middle" class="chart-label">8</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">10</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="Form/Type/NewspaperType.php.html#40"><circle cx="60.0" cy="317.0" r="20.0" class="bubble-danger"><title>App\Form\Type\NewspaperType::buildForm — Coverage: 0.0% | Lines: 42 | Complexity: 1</title></circle></a>
+ <a href="Controller/CategoryController.php.html#160"><circle cx="780.0" cy="152.0" r="17.5" class="bubble-success"><title>App\Controller\CategoryController::delete — Coverage: 100.0% | Lines: 32 | Complexity: 6</title></circle></a>
+ <a href="Controller/TagController.php.html#159"><circle cx="60.0" cy="152.0" r="17.5" class="bubble-danger"><title>App\Controller\TagController::delete — Coverage: 0.0% | Lines: 32 | Complexity: 6</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#274"><circle cx="60.0" cy="152.0" r="16.9" class="bubble-danger"><title>App\Controller\NewspaperController::delete — Coverage: 0.0% | Lines: 30 | Complexity: 6</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#227"><circle cx="60.0" cy="152.0" r="16.6" class="bubble-danger"><title>App\Controller\NewspaperController::edit — Coverage: 0.0% | Lines: 29 | Complexity: 6</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#43"><circle cx="60.0" cy="218.0" r="16.3" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::loadData — Coverage: 0.0% | Lines: 28 | Complexity: 4</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#328"><circle cx="60.0" cy="218.0" r="16.0" class="bubble-danger"><title>App\Controller\NewspaperController::rateNewspaper — Coverage: 0.0% | Lines: 27 | Complexity: 4</title></circle></a>
+ <a href="DataFixtures/UserFixtures.php.html#30"><circle cx="753.3" cy="251.0" r="16.0" class="bubble-success"><title>App\DataFixtures\UserFixtures::loadData — Coverage: 96.3% | Lines: 27 | Complexity: 3</title></circle></a>
+ <a href="Controller/CategoryController.php.html#45"><circle cx="780.0" cy="185.0" r="15.7" class="bubble-success"><title>App\Controller\CategoryController::edit — Coverage: 100.0% | Lines: 26 | Complexity: 5</title></circle></a>
+ <a href="Controller/TagController.php.html#45"><circle cx="60.0" cy="185.0" r="15.7" class="bubble-danger"><title>App\Controller\TagController::edit — Coverage: 0.0% | Lines: 26 | Complexity: 5</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#114"><circle cx="780.0" cy="218.0" r="14.1" class="bubble-success"><title>App\Controller\AdminUserController::delete — Coverage: 100.0% | Lines: 21 | Complexity: 4</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#113"><circle cx="420.0" cy="218.0" r="13.8" class="bubble-danger"><title>App\Controller\NewspaperController::show — Coverage: 50.0% | Lines: 20 | Complexity: 4</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#191"><circle cx="60.0" cy="251.0" r="13.8" class="bubble-danger"><title>App\Controller\NewspaperController::create — Coverage: 0.0% | Lines: 20 | Complexity: 3</title></circle></a>
+ <a href="Controller/CategoryController.php.html#126"><circle cx="780.0" cy="185.0" r="12.7" class="bubble-success"><title>App\Controller\CategoryController::create — Coverage: 100.0% | Lines: 17 | Complexity: 5</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#158"><circle cx="60.0" cy="152.0" r="12.7" class="bubble-danger"><title>App\Controller\NewspaperController::deleteComment — Coverage: 0.0% | Lines: 17 | Complexity: 6</title></circle></a>
+ <a href="Controller/TagController.php.html#124"><circle cx="60.0" cy="218.0" r="12.7" class="bubble-danger"><title>App\Controller\TagController::create — Coverage: 0.0% | Lines: 17 | Complexity: 4</title></circle></a>
+ <a href="DataFixtures/CategoryFixtures.php.html#29"><circle cx="780.0" cy="317.0" r="12.3" class="bubble-success"><title>App\DataFixtures\CategoryFixtures::loadData — Coverage: 100.0% | Lines: 16 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/TagFixtures.php.html#29"><circle cx="60.0" cy="317.0" r="12.3" class="bubble-danger"><title>App\DataFixtures\TagFixtures::loadData — Coverage: 0.0% | Lines: 16 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/UserPasswordType.php.html#28"><circle cx="780.0" cy="317.0" r="11.5" class="bubble-success"><title>App\Form\Type\UserPasswordType::buildForm — Coverage: 100.0% | Lines: 14 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/RatingType.php.html#29"><circle cx="60.0" cy="317.0" r="11.1" class="bubble-danger"><title>App\Form\Type\RatingType::buildForm — Coverage: 0.0% | Lines: 13 | Complexity: 1</title></circle></a>
+ <a href="Controller/UserProfileController.php.html#81"><circle cx="780.0" cy="218.0" r="10.7" class="bubble-success"><title>App\Controller\UserProfileController::changePassword — Coverage: 100.0% | Lines: 12 | Complexity: 4</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#58"><circle cx="60.0" cy="317.0" r="10.7" class="bubble-danger"><title>App\Repository\NewspaperRepository::queryAll — Coverage: 0.0% | Lines: 12 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#216"><circle cx="60.0" cy="251.0" r="10.7" class="bubble-danger"><title>App\Repository\NewspaperRepository::calculateAverageRating — Coverage: 0.0% | Lines: 12 | Complexity: 3</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#63"><circle cx="60.0" cy="86.0" r="10.7" class="bubble-danger"><title>App\Security\Voter\NewspaperVoter::voteOnAttribute — Coverage: 0.0% | Lines: 12 | Complexity: 8</title></circle></a>
+ <a href="Service/AdminUserService.php.html#80"><circle cx="780.0" cy="152.0" r="10.7" class="bubble-success"><title>App\Service\AdminUserService::deleteUser — Coverage: 100.0% | Lines: 12 | Complexity: 6</title></circle></a>
+ <a href="Service/NewspaperService.php.html#65"><circle cx="60.0" cy="284.0" r="10.7" class="bubble-danger"><title>App\Service\NewspaperService::getPaginatedList — Coverage: 0.0% | Lines: 12 | Complexity: 2</title></circle></a>
+ <a href="DataFixtures/AbstractBaseFixtures.php.html#71"><circle cx="714.5" cy="251.0" r="10.2" class="bubble-success"><title>App\DataFixtures\AbstractBaseFixtures::createMany — Coverage: 90.9% | Lines: 11 | Complexity: 3</title></circle></a>
+ <a href="DataFixtures/AbstractBaseFixtures.php.html#104"><circle cx="60.0" cy="251.0" r="10.2" class="bubble-danger"><title>App\DataFixtures\AbstractBaseFixtures::getRandomReference — Coverage: 0.0% | Lines: 11 | Complexity: 3</title></circle></a>
+ <a href="Form/DataTransformer/TagsDataTransformer.php.html#62"><circle cx="60.0" cy="218.0" r="10.2" class="bubble-danger"><title>App\Form\DataTransformer\TagsDataTransformer::reverseTransform — Coverage: 0.0% | Lines: 11 | Complexity: 4</title></circle></a>
+ <a href="Security/Voter/TagVoter.php.html#63"><circle cx="60.0" cy="119.0" r="10.2" class="bubble-danger"><title>App\Security\Voter\TagVoter::voteOnAttribute — Coverage: 0.0% | Lines: 11 | Complexity: 7</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#60"><circle cx="780.0" cy="251.0" r="9.8" class="bubble-success"><title>App\Controller\AdminUserController::edit — Coverage: 100.0% | Lines: 10 | Complexity: 3</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#87"><circle cx="780.0" cy="251.0" r="9.8" class="bubble-success"><title>App\Controller\AdminUserController::changePassword — Coverage: 100.0% | Lines: 10 | Complexity: 3</title></circle></a>
+ <a href="Controller/UserProfileController.php.html#55"><circle cx="780.0" cy="251.0" r="9.8" class="bubble-success"><title>App\Controller\UserProfileController::edit — Coverage: 100.0% | Lines: 10 | Complexity: 3</title></circle></a>
+ <a href="Form/Type/AdminPasswordType.php.html#28"><circle cx="780.0" cy="317.0" r="9.8" class="bubble-success"><title>App\Form\Type\AdminPasswordType::buildForm — Coverage: 100.0% | Lines: 10 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/CategoryVoter.php.html#69"><circle cx="780.0" cy="119.0" r="9.8" class="bubble-success"><title>App\Security\Voter\CategoryVoter::voteOnAttribute — Coverage: 100.0% | Lines: 10 | Complexity: 7</title></circle></a>
+ <a href="Service/TaskService.php.html#47"><circle cx="60.0" cy="317.0" r="9.8" class="bubble-danger"><title>App\Service\TaskService::getPaginatedList — Coverage: 0.0% | Lines: 10 | Complexity: 1</title></circle></a>
+ <a href="Controller/RegistrationController.php.html#39"><circle cx="780.0" cy="251.0" r="9.3" class="bubble-success"><title>App\Controller\RegistrationController::register — Coverage: 100.0% | Lines: 9 | Complexity: 3</title></circle></a>
+ <a href="Form/Type/CategoryType.php.html#28"><circle cx="780.0" cy="317.0" r="9.3" class="bubble-success"><title>App\Form\Type\CategoryType::buildForm — Coverage: 100.0% | Lines: 9 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/TagType.php.html#28"><circle cx="60.0" cy="317.0" r="9.3" class="bubble-danger"><title>App\Form\Type\TagType::buildForm — Coverage: 0.0% | Lines: 9 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#141"><circle cx="60.0" cy="185.0" r="9.3" class="bubble-danger"><title>App\Repository\NewspaperRepository::delete — Coverage: 0.0% | Lines: 9 | Complexity: 5</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#76"><circle cx="780.0" cy="317.0" r="9.3" class="bubble-success"><title>App\Security\LoginFormAuthenticator::authenticate — Coverage: 100.0% | Lines: 9 | Complexity: 1</title></circle></a>
+ <a href="Service/RegistrationService.php.html#38"><circle cx="780.0" cy="317.0" r="9.3" class="bubble-success"><title>App\Service\RegistrationService::registerUser — Coverage: 100.0% | Lines: 9 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#128"><circle cx="60.0" cy="284.0" r="8.7" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::addComments — Coverage: 0.0% | Lines: 8 | Complexity: 2</title></circle></a>
+ <a href="Service/AdminUserService.php.html#111"><circle cx="780.0" cy="218.0" r="8.7" class="bubble-success"><title>App\Service\AdminUserService::recalculateAverageRatingWithoutUser — Coverage: 100.0% | Lines: 8 | Complexity: 4</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#86"><circle cx="60.0" cy="317.0" r="8.2" class="bubble-danger"><title>App\Controller\NewspaperController::own — Coverage: 0.0% | Lines: 7 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#146"><circle cx="60.0" cy="284.0" r="8.2" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::addRatings — Coverage: 0.0% | Lines: 7 | Complexity: 2</title></circle></a>
+ <a href="Form/Type/RegistrationFormType.php.html#30"><circle cx="780.0" cy="317.0" r="8.2" class="bubble-success"><title>App\Form\Type\RegistrationFormType::buildForm — Coverage: 100.0% | Lines: 7 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#106"><circle cx="60.0" cy="317.0" r="8.2" class="bubble-danger"><title>App\Repository\NewspaperRepository::countByTag — Coverage: 0.0% | Lines: 7 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#195"><circle cx="60.0" cy="251.0" r="8.2" class="bubble-danger"><title>App\Repository\NewspaperRepository::applyFiltersToList — Coverage: 0.0% | Lines: 7 | Complexity: 3</title></circle></a>
+ <a href="Resolver/NewspaperListInputFiltersDtoResolver.php.html#28"><circle cx="368.6" cy="251.0" r="8.2" class="bubble-danger"><title>App\Resolver\NewspaperListInputFiltersDtoResolver::resolve — Coverage: 42.9% | Lines: 7 | Complexity: 3</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#62"><circle cx="60.0" cy="317.0" r="7.6" class="bubble-danger"><title>App\Controller\NewspaperController::index — Coverage: 0.0% | Lines: 6 | Complexity: 1</title></circle></a>
+ <a href="Form/DataTransformer/TagsDataTransformer.php.html#38"><circle cx="60.0" cy="251.0" r="7.6" class="bubble-danger"><title>App\Form\DataTransformer\TagsDataTransformer::transform — Coverage: 0.0% | Lines: 6 | Complexity: 3</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#85"><circle cx="780.0" cy="317.0" r="7.6" class="bubble-success"><title>App\Repository\NewspaperRepository::countByCategory — Coverage: 100.0% | Lines: 6 | Complexity: 1</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#37"><circle cx="60.0" cy="317.0" r="7.6" class="bubble-danger"><title>App\Repository\TaskRepository::queryAll — Coverage: 0.0% | Lines: 6 | Complexity: 1</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#54"><circle cx="60.0" cy="317.0" r="7.6" class="bubble-danger"><title>App\Repository\TaskRepository::countByCategory — Coverage: 0.0% | Lines: 6 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#86"><circle cx="60.0" cy="317.0" r="6.9" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::getDependencies — Coverage: 0.0% | Lines: 5 | Complexity: 1</title></circle></a>
+ <a href="Repository/UserRepository.php.html#41"><circle cx="780.0" cy="284.0" r="6.9" class="bubble-success"><title>App\Repository\UserRepository::upgradePassword — Coverage: 100.0% | Lines: 5 | Complexity: 2</title></circle></a>
+ <a href="Service/CategoryService.php.html#49"><circle cx="780.0" cy="317.0" r="6.9" class="bubble-success"><title>App\Service\CategoryService::getPaginatedList — Coverage: 100.0% | Lines: 5 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#167"><circle cx="60.0" cy="251.0" r="6.9" class="bubble-danger"><title>App\Service\NewspaperService::prepareFilters — Coverage: 0.0% | Lines: 5 | Complexity: 3</title></circle></a>
+ <a href="Service/TagService.php.html#50"><circle cx="60.0" cy="317.0" r="6.9" class="bubble-danger"><title>App\Service\TagService::getPaginatedList — Coverage: 0.0% | Lines: 5 | Complexity: 1</title></circle></a>
+ <a href="Service/UserProfileService.php.html#50"><circle cx="780.0" cy="251.0" r="6.9" class="bubble-success"><title>App\Service\UserProfileService::validateAndChangePassword — Coverage: 100.0% | Lines: 5 | Complexity: 3</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#42"><circle cx="780.0" cy="317.0" r="6.2" class="bubble-success"><title>App\Controller\AdminUserController::index — Coverage: 100.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/AbstractBaseFixtures.php.html#134"><circle cx="60.0" cy="284.0" r="6.2" class="bubble-danger"><title>App\DataFixtures\AbstractBaseFixtures::getRandomReferences — Coverage: 0.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="DataFixtures/CategoryFixtures.php.html#57"><circle cx="780.0" cy="317.0" r="6.2" class="bubble-success"><title>App\DataFixtures\CategoryFixtures::getGeneratedTitle — Coverage: 100.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#100"><circle cx="60.0" cy="317.0" r="6.2" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::getGeneratedTitle — Coverage: 0.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/TagFixtures.php.html#57"><circle cx="60.0" cy="317.0" r="6.2" class="bubble-danger"><title>App\DataFixtures\TagFixtures::getGeneratedTitle — Coverage: 0.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/CommentType.php.html#28"><circle cx="60.0" cy="317.0" r="6.2" class="bubble-danger"><title>App\Form\Type\CommentType::buildForm — Coverage: 0.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#166"><circle cx="60.0" cy="317.0" r="6.2" class="bubble-danger"><title>App\Repository\NewspaperRepository::queryByAuthor — Coverage: 0.0% | Lines: 4 | Complexity: 1</title></circle></a>
+ <a href="Service/CategoryService.php.html#90"><circle cx="780.0" cy="284.0" r="6.2" class="bubble-success"><title>App\Service\CategoryService::canBeDeleted — Coverage: 100.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="Service/TagService.php.html#93"><circle cx="60.0" cy="284.0" r="6.2" class="bubble-danger"><title>App\Service\TagService::canBeDeleted — Coverage: 0.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="Controller/CategoryController.php.html#107"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Controller\CategoryController::show — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Controller/SecurityController.php.html#27"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Controller\SecurityController::login — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/AbstractBaseFixtures.php.html#41"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\DataFixtures\AbstractBaseFixtures::load — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#114"><circle cx="60.0" cy="317.0" r="5.3" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::getGeneratedContent — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/NewspaperFixtures.php.html#163"><circle cx="60.0" cy="317.0" r="5.3" class="bubble-danger"><title>App\DataFixtures\NewspaperFixtures::getGeneratedCommentContent — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/AdminEditType.php.html#29"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Form\Type\AdminEditType::buildForm — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/AdminEditType.php.html#43"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Form\Type\AdminEditType::configureOptions — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/CommentType.php.html#43"><circle cx="60.0" cy="317.0" r="5.3" class="bubble-danger"><title>App\Form\Type\CommentType::configureOptions — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/RatingType.php.html#53"><circle cx="60.0" cy="317.0" r="5.3" class="bubble-danger"><title>App\Form\Type\RatingType::configureOptions — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/RegistrationFormType.php.html#48"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Form\Type\RegistrationFormType::configureOptions — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/UserEditType.php.html#29"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Form\Type\UserEditType::buildForm — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/UserEditType.php.html#43"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Form\Type\UserEditType::configureOptions — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#43"><circle cx="780.0" cy="317.0" r="5.3" class="bubble-success"><title>App\Repository\CategoryRepository::queryAll — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Repository/RecordRepository.php.html#71"><circle cx="60.0" cy="251.0" r="5.3" class="bubble-danger"><title>App\Repository\RecordRepository::findOneById — Coverage: 0.0% | Lines: 3 | Complexity: 3</title></circle></a>
+ <a href="Repository/TagRepository.php.html#43"><circle cx="60.0" cy="317.0" r="5.3" class="bubble-danger"><title>App\Repository\TagRepository::queryAll — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#102"><circle cx="780.0" cy="284.0" r="5.3" class="bubble-success"><title>App\Security\LoginFormAuthenticator::onAuthenticationSuccess — Coverage: 100.0% | Lines: 3 | Complexity: 2</title></circle></a>
+ <a href="Controller/CategoryController.php.html#87"><circle cx="780.0" cy="317.0" r="4.4" class="bubble-success"><title>App\Controller\CategoryController::index — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Controller/TagController.php.html#87"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Controller\TagController::index — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#57"><circle cx="780.0" cy="317.0" r="4.4" class="bubble-success"><title>App\Repository\CategoryRepository::save — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#71"><circle cx="780.0" cy="317.0" r="4.4" class="bubble-success"><title>App\Repository\CategoryRepository::delete — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/CommentRepository.php.html#35"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\CommentRepository::save — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/CommentRepository.php.html#48"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\CommentRepository::delete — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#128"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\NewspaperRepository::save — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/RatingRepository.php.html#40"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\RatingRepository::save — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/TagRepository.php.html#57"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\TagRepository::save — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/TagRepository.php.html#71"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\TagRepository::delete — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#70"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\TaskRepository::save — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#81"><circle cx="60.0" cy="317.0" r="4.4" class="bubble-danger"><title>App\Repository\TaskRepository::delete — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#61"><circle cx="780.0" cy="284.0" r="4.4" class="bubble-success"><title>App\Security\LoginFormAuthenticator::supports — Coverage: 100.0% | Lines: 2 | Complexity: 2</title></circle></a>
+ <a href="Security/Voter/CategoryVoter.php.html#54"><circle cx="780.0" cy="284.0" r="4.4" class="bubble-success"><title>App\Security\Voter\CategoryVoter::supports — Coverage: 100.0% | Lines: 2 | Complexity: 2</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#48"><circle cx="780.0" cy="284.0" r="4.4" class="bubble-success"><title>App\Security\Voter\NewspaperVoter::supports — Coverage: 100.0% | Lines: 2 | Complexity: 2</title></circle></a>
+ <a href="Security/Voter/TagVoter.php.html#48"><circle cx="780.0" cy="284.0" r="4.4" class="bubble-success"><title>App\Security\Voter\TagVoter::supports — Coverage: 100.0% | Lines: 2 | Complexity: 2</title></circle></a>
+ <a href="Service/AdminUserService.php.html#67"><circle cx="780.0" cy="317.0" r="4.4" class="bubble-success"><title>App\Service\AdminUserService::changePassword — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Controller/AdminUserController.php.html#32"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\AdminUserController::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/CategoryController.php.html#32"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\CategoryController::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/NewspaperController.php.html#49"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\NewspaperController::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/RegistrationController.php.html#27"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\RegistrationController::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/SecurityController.php.html#41"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\SecurityController::logout — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/TagController.php.html#32"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Controller\TagController::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/TagController.php.html#107"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Controller\TagController::show — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/UserProfileController.php.html#30"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\UserProfileController::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Controller/UserProfileController.php.html#42"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Controller\UserProfileController::index — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/AppFixtures.php.html#24"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\DataFixtures\AppFixtures::load — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="DataFixtures/UserFixtures.php.html#23"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\DataFixtures\UserFixtures::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Dto/NewspaperListFiltersDto.php.html#25"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Dto\NewspaperListFiltersDto::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Dto/NewspaperListInputFiltersDto.php.html#21"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Dto\NewspaperListInputFiltersDto::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/DataTransformer/TagsDataTransformer.php.html#27"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\DataTransformer\TagsDataTransformer::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/AdminPasswordType.php.html#49"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Form\Type\AdminPasswordType::configureOptions — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/CategoryType.php.html#46"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Form\Type\CategoryType::configureOptions — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/CategoryType.php.html#56"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Form\Type\CategoryType::getBlockPrefix — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/NewspaperType.php.html#28"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\Type\NewspaperType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/NewspaperType.php.html#91"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\Type\NewspaperType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/NewspaperType.php.html#101"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\Type\NewspaperType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/TagType.php.html#48"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\Type\TagType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/TagType.php.html#58"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Form\Type\TagType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Form/Type/UserPasswordType.php.html#53"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Form\Type\UserPasswordType::configureOptions — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#33"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\CategoryRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/CategoryRepository.php.html#84"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\CategoryRepository::getOrCreateQueryBuilder — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/CommentRepository.php.html#23"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\CommentRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#46"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\NewspaperRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/NewspaperRepository.php.html#182"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\NewspaperRepository::getOrCreateQueryBuilder — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/RatingRepository.php.html#28"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\RatingRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/RecordRepository.php.html#59"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Repository\RecordRepository::findAll — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/TagRepository.php.html#33"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\TagRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/TagRepository.php.html#84"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Repository\TagRepository::getOrCreateQueryBuilder — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/TaskRepository.php.html#27"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Repository\TaskRepository::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Repository/UserRepository.php.html#28"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Repository\UserRepository::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#48"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Security\LoginFormAuthenticator::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/LoginFormAuthenticator.php.html#118"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Security\LoginFormAuthenticator::getLoginUrl — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/CategoryVoter.php.html#94"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Security\Voter\CategoryVoter::canView — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#92"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Security\Voter\NewspaperVoter::canEdit — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#105"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Security\Voter\NewspaperVoter::canView — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/NewspaperVoter.php.html#118"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Security\Voter\NewspaperVoter::canDelete — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Security/Voter/TagVoter.php.html#91"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Security\Voter\TagVoter::canView — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/AdminUserService.php.html#33"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\AdminUserService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/AdminUserService.php.html#42"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\AdminUserService::getAllUsers — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/AdminUserService.php.html#54"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\AdminUserService::updateUser — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/CategoryService.php.html#38"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\CategoryService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/CategoryService.php.html#65"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\CategoryService::save — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/CategoryService.php.html#78"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\CategoryService::delete — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/CategoryService.php.html#110"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\CategoryService::findOneById — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#50"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\NewspaperService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#93"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::save — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#105"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::delete — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#117"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::findOneByTitle — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#129"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::saveComment — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#141"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::deleteComment — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/NewspaperService.php.html#153"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\NewspaperService::saveRating — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/RegistrationService.php.html#27"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\RegistrationService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/RegistrationService.php.html#57"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\RegistrationService::getSuccessMessage — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TagService.php.html#39"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\TagService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TagService.php.html#66"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TagService::save — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TagService.php.html#81"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TagService::delete — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TagService.php.html#113"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TagService::findOneById — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TaskService.php.html#36"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TaskService::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TaskService.php.html#66"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TaskService::save — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/TaskService.php.html#76"><circle cx="60.0" cy="317.0" r="4.0" class="bubble-danger"><title>App\Service\TaskService::delete — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/UserProfileService.php.html#24"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\UserProfileService::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Service/UserProfileService.php.html#35"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Service\UserProfileService::updateUser — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Util/Calculator.php.html#22"><circle cx="780.0" cy="317.0" r="4.0" class="bubble-success"><title>App\Util\Calculator::add — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Method</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#63">App\Security\Voter\NewspaperVoter::voteOnAttribute</a></td><td class="text-right">72</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/TagVoter.php.html#63">App\Security\Voter\TagVoter::voteOnAttribute</a></td><td class="text-right">56</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#158">App\Controller\NewspaperController::deleteComment</a></td><td class="text-right">42</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#227">App\Controller\NewspaperController::edit</a></td><td class="text-right">42</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#274">App\Controller\NewspaperController::delete</a></td><td class="text-right">42</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#159">App\Controller\TagController::delete</a></td><td class="text-right">42</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#45">App\Controller\TagController::edit</a></td><td class="text-right">30</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#141">App\Repository\NewspaperRepository::delete</a></td><td class="text-right">30</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#328">App\Controller\NewspaperController::rateNewspaper</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#124">App\Controller\TagController::create</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#43">App\DataFixtures\NewspaperFixtures::loadData</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/DataTransformer/TagsDataTransformer.php.html#62">App\Form\DataTransformer\TagsDataTransformer::reverseTransform</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#191">App\Controller\NewspaperController::create</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#104">App\DataFixtures\AbstractBaseFixtures::getRandomReference</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/DataTransformer/TagsDataTransformer.php.html#38">App\Form\DataTransformer\TagsDataTransformer::transform</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#195">App\Repository\NewspaperRepository::applyFiltersToList</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#216">App\Repository\NewspaperRepository::calculateAverageRating</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/RecordRepository.php.html#71">App\Repository\RecordRepository::findOneById</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#167">App\Service\NewspaperService::prepareFilters</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/CategoryVoter.php.html#69">App\Security\Voter\CategoryVoter::voteOnAttribute</a></td><td class="text-right">7</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#160">App\Controller\CategoryController::delete</a></td><td class="text-right">6</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#113">App\Controller\NewspaperController::show</a></td><td class="text-right">6.00</td><td class="text-right">50.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#134">App\DataFixtures\AbstractBaseFixtures::getRandomReferences</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#128">App\DataFixtures\NewspaperFixtures::addComments</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#146">App\DataFixtures\NewspaperFixtures::addRatings</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#80">App\Service\AdminUserService::deleteUser</a></td><td class="text-right">6</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#65">App\Service\NewspaperService::getPaginatedList</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#93">App\Service\TagService::canBeDeleted</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#45">App\Controller\CategoryController::edit</a></td><td class="text-right">5</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#126">App\Controller\CategoryController::create</a></td><td class="text-right">5</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Resolver/NewspaperListInputFiltersDtoResolver.php.html#28">App\Resolver\NewspaperListInputFiltersDtoResolver::resolve</a></td><td class="text-right">4.68</td><td class="text-right">42.9%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#114">App\Controller\AdminUserController::delete</a></td><td class="text-right">4</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/UserProfileController.php.html#81">App\Controller\UserProfileController::changePassword</a></td><td class="text-right">4</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#111">App\Service\AdminUserService::recalculateAverageRatingWithoutUser</a></td><td class="text-right">4</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#71">App\DataFixtures\AbstractBaseFixtures::createMany</a></td><td class="text-right">3.01</td><td class="text-right">90.9%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#60">App\Controller\AdminUserController::edit</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#87">App\Controller\AdminUserController::changePassword</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/RegistrationController.php.html#39">App\Controller\RegistrationController::register</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/UserProfileController.php.html#55">App\Controller\UserProfileController::edit</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/UserFixtures.php.html#30">App\DataFixtures\UserFixtures::loadData</a></td><td class="text-right">3</td><td class="text-right">96.3%</td></tr>
+  <tr><td><a href="Service/UserProfileService.php.html#50">App\Service\UserProfileService::validateAndChangePassword</a></td><td class="text-right">3</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#62">App\Controller\NewspaperController::index</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#86">App\Controller\NewspaperController::own</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#32">App\Controller\TagController::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#87">App\Controller\TagController::index</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/TagController.php.html#107">App\Controller\TagController::show</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/AppFixtures.php.html#24">App\DataFixtures\AppFixtures::load</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#86">App\DataFixtures\NewspaperFixtures::getDependencies</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#100">App\DataFixtures\NewspaperFixtures::getGeneratedTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#114">App\DataFixtures\NewspaperFixtures::getGeneratedContent</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/NewspaperFixtures.php.html#163">App\DataFixtures\NewspaperFixtures::getGeneratedCommentContent</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/TagFixtures.php.html#29">App\DataFixtures\TagFixtures::loadData</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="DataFixtures/TagFixtures.php.html#57">App\DataFixtures\TagFixtures::getGeneratedTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Dto/NewspaperListFiltersDto.php.html#25">App\Dto\NewspaperListFiltersDto::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Dto/NewspaperListInputFiltersDto.php.html#21">App\Dto\NewspaperListInputFiltersDto::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/DataTransformer/TagsDataTransformer.php.html#27">App\Form\DataTransformer\TagsDataTransformer::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/CommentType.php.html#28">App\Form\Type\CommentType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/CommentType.php.html#43">App\Form\Type\CommentType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/NewspaperType.php.html#28">App\Form\Type\NewspaperType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/NewspaperType.php.html#40">App\Form\Type\NewspaperType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/NewspaperType.php.html#91">App\Form\Type\NewspaperType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/NewspaperType.php.html#101">App\Form\Type\NewspaperType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/RatingType.php.html#29">App\Form\Type\RatingType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/RatingType.php.html#53">App\Form\Type\RatingType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/TagType.php.html#28">App\Form\Type\TagType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/TagType.php.html#48">App\Form\Type\TagType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Form/Type/TagType.php.html#58">App\Form\Type\TagType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/CommentRepository.php.html#35">App\Repository\CommentRepository::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/CommentRepository.php.html#48">App\Repository\CommentRepository::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#58">App\Repository\NewspaperRepository::queryAll</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#106">App\Repository\NewspaperRepository::countByTag</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#128">App\Repository\NewspaperRepository::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#166">App\Repository\NewspaperRepository::queryByAuthor</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/RatingRepository.php.html#40">App\Repository\RatingRepository::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/RecordRepository.php.html#59">App\Repository\RecordRepository::findAll</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#43">App\Repository\TagRepository::queryAll</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#57">App\Repository\TagRepository::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#71">App\Repository\TagRepository::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#84">App\Repository\TagRepository::getOrCreateQueryBuilder</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#27">App\Repository\TaskRepository::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#37">App\Repository\TaskRepository::queryAll</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#54">App\Repository\TaskRepository::countByCategory</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#70">App\Repository\TaskRepository::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/TaskRepository.php.html#81">App\Repository\TaskRepository::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Repository/UserRepository.php.html#41">App\Repository\UserRepository::upgradePassword</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#61">App\Security\LoginFormAuthenticator::supports</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#102">App\Security\LoginFormAuthenticator::onAuthenticationSuccess</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/Voter/CategoryVoter.php.html#54">App\Security\Voter\CategoryVoter::supports</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#48">App\Security\Voter\NewspaperVoter::supports</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#92">App\Security\Voter\NewspaperVoter::canEdit</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#105">App\Security\Voter\NewspaperVoter::canView</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/NewspaperVoter.php.html#118">App\Security\Voter\NewspaperVoter::canDelete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Security/Voter/TagVoter.php.html#48">App\Security\Voter\TagVoter::supports</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/Voter/TagVoter.php.html#91">App\Security\Voter\TagVoter::canView</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#90">App\Service\CategoryService::canBeDeleted</a></td><td class="text-right">2</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#93">App\Service\NewspaperService::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#105">App\Service\NewspaperService::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#117">App\Service\NewspaperService::findOneByTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#129">App\Service\NewspaperService::saveComment</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#141">App\Service\NewspaperService::deleteComment</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#153">App\Service\NewspaperService::saveRating</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#50">App\Service\TagService::getPaginatedList</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#66">App\Service\TagService::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#81">App\Service\TagService::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#113">App\Service\TagService::findOneById</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TaskService.php.html#36">App\Service\TaskService::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TaskService.php.html#47">App\Service\TaskService::getPaginatedList</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TaskService.php.html#66">App\Service\TaskService::save</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Service/TaskService.php.html#76">App\Service\TaskService::delete</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#32">App\Controller\AdminUserController::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/AdminUserController.php.html#42">App\Controller\AdminUserController::index</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#32">App\Controller\CategoryController::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#87">App\Controller\CategoryController::index</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/CategoryController.php.html#107">App\Controller\CategoryController::show</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/NewspaperController.php.html#49">App\Controller\NewspaperController::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/RegistrationController.php.html#27">App\Controller\RegistrationController::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/SecurityController.php.html#27">App\Controller\SecurityController::login</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/SecurityController.php.html#41">App\Controller\SecurityController::logout</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/UserProfileController.php.html#30">App\Controller\UserProfileController::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Controller/UserProfileController.php.html#42">App\Controller\UserProfileController::index</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#41">App\DataFixtures\AbstractBaseFixtures::load</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/CategoryFixtures.php.html#29">App\DataFixtures\CategoryFixtures::loadData</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/CategoryFixtures.php.html#57">App\DataFixtures\CategoryFixtures::getGeneratedTitle</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/UserFixtures.php.html#23">App\DataFixtures\UserFixtures::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminEditType.php.html#29">App\Form\Type\AdminEditType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminEditType.php.html#43">App\Form\Type\AdminEditType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminPasswordType.php.html#28">App\Form\Type\AdminPasswordType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/AdminPasswordType.php.html#49">App\Form\Type\AdminPasswordType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/CategoryType.php.html#28">App\Form\Type\CategoryType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/CategoryType.php.html#46">App\Form\Type\CategoryType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/CategoryType.php.html#56">App\Form\Type\CategoryType::getBlockPrefix</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/RegistrationFormType.php.html#30">App\Form\Type\RegistrationFormType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/RegistrationFormType.php.html#48">App\Form\Type\RegistrationFormType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserEditType.php.html#29">App\Form\Type\UserEditType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserEditType.php.html#43">App\Form\Type\UserEditType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserPasswordType.php.html#28">App\Form\Type\UserPasswordType::buildForm</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Form/Type/UserPasswordType.php.html#53">App\Form\Type\UserPasswordType::configureOptions</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#33">App\Repository\CategoryRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#43">App\Repository\CategoryRepository::queryAll</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#57">App\Repository\CategoryRepository::save</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#71">App\Repository\CategoryRepository::delete</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CategoryRepository.php.html#84">App\Repository\CategoryRepository::getOrCreateQueryBuilder</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/CommentRepository.php.html#23">App\Repository\CommentRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#46">App\Repository\NewspaperRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#85">App\Repository\NewspaperRepository::countByCategory</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/NewspaperRepository.php.html#182">App\Repository\NewspaperRepository::getOrCreateQueryBuilder</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/RatingRepository.php.html#28">App\Repository\RatingRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/TagRepository.php.html#33">App\Repository\TagRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Repository/UserRepository.php.html#28">App\Repository\UserRepository::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#48">App\Security\LoginFormAuthenticator::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#76">App\Security\LoginFormAuthenticator::authenticate</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/LoginFormAuthenticator.php.html#118">App\Security\LoginFormAuthenticator::getLoginUrl</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Security/Voter/CategoryVoter.php.html#94">App\Security\Voter\CategoryVoter::canView</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#33">App\Service\AdminUserService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#42">App\Service\AdminUserService::getAllUsers</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#54">App\Service\AdminUserService::updateUser</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/AdminUserService.php.html#67">App\Service\AdminUserService::changePassword</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#38">App\Service\CategoryService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#49">App\Service\CategoryService::getPaginatedList</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#65">App\Service\CategoryService::save</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#78">App\Service\CategoryService::delete</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/CategoryService.php.html#110">App\Service\CategoryService::findOneById</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/NewspaperService.php.html#50">App\Service\NewspaperService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/RegistrationService.php.html#27">App\Service\RegistrationService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/RegistrationService.php.html#38">App\Service\RegistrationService::registerUser</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/RegistrationService.php.html#57">App\Service\RegistrationService::getSuccessMessage</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/TagService.php.html#39">App\Service\TagService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/UserProfileService.php.html#24">App\Service\UserProfileService::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Service/UserProfileService.php.html#35">App\Service\UserProfileService::updateUser</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Util/Calculator.php.html#22">App\Util\Calculator::add</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="DataFixtures/AbstractBaseFixtures.php.html#51">App\DataFixtures\AbstractBaseFixtures::loadData</a></td><td class="text-right">0</td><td class="text-right">100.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 14.1.9</a> using <a href="https://www.php.net/" target="_top">PHP 8.5.6</a> and <a href="https://phpunit.de/">PHPUnit 13.1.12</a> at Sat Jun 20 11:44:17 UTC 2026.</small>
+    </p>
+   </footer>
+  </div>
+ </body>
+</html>

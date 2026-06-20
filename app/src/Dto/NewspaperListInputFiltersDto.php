@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Newspaper list input filters DTO.
  */

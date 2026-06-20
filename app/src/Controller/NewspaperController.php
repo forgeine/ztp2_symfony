@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Newspaper controller.
  */
@@ -217,7 +218,7 @@ class NewspaperController extends AbstractController
     /**
      * Editing a newspaper, action edit.
      *
-     * @param Request $request Request
+     * @param Request   $request   Request
      * @param Newspaper $newspaper Entity Newspaper
      *
      * @return Response Edit
@@ -264,7 +265,7 @@ class NewspaperController extends AbstractController
     /**
      * Deleting a newspaper, action delete.
      *
-     * @param Request $request Request
+     * @param Request   $request   Request
      * @param Newspaper $newspaper Entity Newspaper
      *
      * @return Response Delete

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Base fixtures.
  */
@@ -74,9 +75,7 @@ abstract class AbstractBaseFixtures extends Fixture
             $entity = $factory($i);
 
             if (null === $entity) {
-                throw new \LogicException(
-                    'Did you forget to return the entity object from your callback?'
-                );
+                throw new \LogicException('Did you forget to return the entity object from your callback?');
             }
 
             $this->manager->persist($entity);
@@ -109,10 +108,7 @@ abstract class AbstractBaseFixtures extends Fixture
         }
 
         if (empty(self::$references[$groupName])) {
-            throw new \InvalidArgumentException(sprintf(
-                'Did not find any references saved with the group name "%s"',
-                $groupName
-            ));
+            throw new \InvalidArgumentException(sprintf('Did not find any references saved with the group name "%s"', $groupName));
         }
 
         $randomReference = $this->faker->randomElement(

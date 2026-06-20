@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin User Service Interface.
  */

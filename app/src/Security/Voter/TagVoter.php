@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Tag voter.
  */
@@ -18,21 +19,21 @@ class TagVoter extends Voter
     /**
      * Edit permission.
      *
-     * @const string
+     * @var string
      */
     private const EDIT = 'EDIT';
 
     /**
      * View permission.
      *
-     * @const string
+     * @var string
      */
     private const VIEW = 'VIEW';
 
     /**
      * Delete permission.
      *
-     * @const string
+     * @var string
      */
     private const DELETE = 'DELETE';
 

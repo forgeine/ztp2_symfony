@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Category voter.
  */
@@ -18,27 +19,27 @@ class CategoryVoter extends Voter
     /**
      * Edit permission.
      *
-     * @const string
+     * @var string
      */
     private const EDIT = 'EDIT';
     /**
      * Create permission.
      *
-     * @const string
+     * @var string
      */
     private const CREATE = 'CREATE';
 
     /**
      * View permission.
      *
-     * @const string
+     * @var string
      */
     private const VIEW = 'VIEW';
 
     /**
      * Delete permission.
      *
-     * @const string
+     * @var string
      */
     private const DELETE = 'DELETE';
 

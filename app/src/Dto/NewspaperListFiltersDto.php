@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Newspaper list filters DTO.
  */
@@ -17,8 +18,8 @@ class NewspaperListFiltersDto
     /**
      * Constructor.
      *
-     * @param Category|null  $category        Category entity
-     * @param Tag|null       $tag             Tag entity
+     * @param Category|null   $category        Category entity
+     * @param Tag|null        $tag             Tag entity
      * @param NewspaperStatus $newspaperStatus Newspaper status
      */
     public function __construct(public readonly ?Category $category, public readonly ?Tag $tag, public readonly NewspaperStatus $newspaperStatus)

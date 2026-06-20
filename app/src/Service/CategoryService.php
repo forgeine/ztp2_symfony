@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Category service.
  */
@@ -23,7 +24,7 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Items per page.
      *
-     * @constant int
+     * @var int
      */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 

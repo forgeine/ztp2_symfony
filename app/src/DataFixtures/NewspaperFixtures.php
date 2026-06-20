@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Newspaper fixtures.
  */
@@ -75,6 +76,23 @@ class NewspaperFixtures extends AbstractBaseFixtures implements DependentFixture
     }
 
     /**
+     * This method must return an array of fixtures classes
+     * on which the implementing class depends on.
+     *
+     * @return string[] of dependencies
+     *
+     * @psalm-return array{0: CategoryFixtures::class, 1: TagFixtures::class, 2: UserFixtures::class}
+     */
+    public function getDependencies(): array
+    {
+        return [
+            CategoryFixtures::class,
+            TagFixtures::class,
+            UserFixtures::class,
+        ];
+    }
+
+    /**
      * Get generated title.
      *
      * @return string Title
@@ -148,22 +166,5 @@ class NewspaperFixtures extends AbstractBaseFixtures implements DependentFixture
         $content = preg_replace('/\s+/', ' ', $content);
 
         return trim((string) $content);
-    }
-
-    /**
-     * This method must return an array of fixtures classes
-     * on which the implementing class depends on.
-     *
-     * @return string[] of dependencies
-     *
-     * @psalm-return array{0: CategoryFixtures::class, 1: TagFixtures::class, 2: UserFixtures::class}
-     */
-    public function getDependencies(): array
-    {
-        return [
-            CategoryFixtures::class,
-            TagFixtures::class,
-            UserFixtures::class,
-        ];
     }
 }

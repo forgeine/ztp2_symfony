@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Newspaper voter.
  */
@@ -18,21 +19,21 @@ class NewspaperVoter extends Voter
     /**
      * Edit permission.
      *
-     * @const string
+     * @var string
      */
     private const EDIT = 'EDIT';
 
     /**
      * View permission.
      *
-     * @const string
+     * @var string
      */
     private const VIEW = 'VIEW';
 
     /**
      * Delete permission.
      *
-     * @const string
+     * @var string
      */
     private const DELETE = 'DELETE';
 
@@ -83,8 +84,8 @@ class NewspaperVoter extends Voter
     /**
      * Checks if user can edit newspaper.
      *
-     * @param Newspaper        $newspaper Newspaper entity
-     * @param UserInterface $user   User
+     * @param Newspaper     $newspaper Newspaper entity
+     * @param UserInterface $user      User
      *
      * @return bool Result
      */
@@ -96,8 +97,8 @@ class NewspaperVoter extends Voter
     /**
      * Checks if user can view newspaper.
      *
-     * @param Newspaper        $newspaper Newspaper entity
-     * @param UserInterface $user   User
+     * @param Newspaper     $newspaper Newspaper entity
+     * @param UserInterface $user      User
      *
      * @return bool Result
      */
@@ -109,8 +110,8 @@ class NewspaperVoter extends Voter
     /**
      * Checks if user can delete newspaper.
      *
-     * @param Newspaper        $newspaper Newspaper entity
-     * @param UserInterface $user   User
+     * @param Newspaper     $newspaper Newspaper entity
+     * @param UserInterface $user      User
      *
      * @return bool Result
      */

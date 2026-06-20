@@ -1,4 +1,5 @@
 <?php
+
 /**
  * tag service.
  */
@@ -24,7 +25,7 @@ class TagService implements TagServiceInterface
     /**
      * Items per page.
      *
-     * @constant int
+     * @var int
      */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/wwwroot/app/src/Entity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css?v=14.1.9" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css?v=14.1.9" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/home/wwwroot/app/src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Classes</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="284.0" x2="780" y2="284.0" class="chart-grid"/>
+ <text x="52" y="284.0" text-anchor="end" dominant-baseline="middle" class="chart-label">10</text>
+ <line x1="60" y1="218.0" x2="780" y2="218.0" class="chart-grid"/>
+ <text x="52" y="218.0" text-anchor="end" dominant-baseline="middle" class="chart-label">20</text>
+ <line x1="60" y1="152.0" x2="780" y2="152.0" class="chart-grid"/>
+ <text x="52" y="152.0" text-anchor="end" dominant-baseline="middle" class="chart-label">30</text>
+ <line x1="60" y1="86.0" x2="780" y2="86.0" class="chart-grid"/>
+ <text x="52" y="86.0" text-anchor="end" dominant-baseline="middle" class="chart-label">40</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">50</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="Newspaper.php.html#25"><circle cx="185.7" cy="105.8" r="20.0" class="bubble-danger"><title>App\Entity\Newspaper — Coverage: 17.5% | Lines: 63 | Complexity: 37</title></circle></a>
+ <a href="User.php.html#22"><circle cx="404.3" cy="237.8" r="12.1" class="bubble-danger"><title>App\Entity\User — Coverage: 47.8% | Lines: 23 | Complexity: 17</title></circle></a>
+ <a href="Comment.php.html#19"><circle cx="60.0" cy="290.6" r="9.1" class="bubble-danger"><title>App\Entity\Comment — Coverage: 0.0% | Lines: 13 | Complexity: 9</title></circle></a>
+ <a href="Tag.php.html#17"><circle cx="60.0" cy="290.6" r="9.1" class="bubble-danger"><title>App\Entity\Tag — Coverage: 0.0% | Lines: 13 | Complexity: 9</title></circle></a>
+ <a href="Category.php.html#23"><circle cx="387.3" cy="290.6" r="8.4" class="bubble-danger"><title>App\Entity\Category — Coverage: 45.5% | Lines: 11 | Complexity: 9</title></circle></a>
+ <a href="Enum/NewspaperStatus.php.html#11"><circle cx="60.0" cy="310.4" r="8.4" class="bubble-danger"><title>App\Entity\Enum\NewspaperStatus — Coverage: 0.0% | Lines: 11 | Complexity: 6</title></circle></a>
+ <a href="Rating.php.html#16"><circle cx="60.0" cy="303.8" r="8.0" class="bubble-danger"><title>App\Entity\Rating — Coverage: 0.0% | Lines: 10 | Complexity: 7</title></circle></a>
+ <a href="Enum/UserRole.php.html#11"><circle cx="60.0" cy="330.2" r="4.4" class="bubble-danger"><title>App\Entity\Enum\UserRole — Coverage: 0.0% | Lines: 3 | Complexity: 3</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Class</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="Newspaper.php.html#25">App\Entity\Newspaper</a></td><td class="text-right">806.82</td><td class="text-right">17.5%</td></tr>
+  <tr><td><a href="Comment.php.html#19">App\Entity\Comment</a></td><td class="text-right">90</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#17">App\Entity\Tag</a></td><td class="text-right">90</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#22">App\Entity\User</a></td><td class="text-right">58.04</td><td class="text-right">47.8%</td></tr>
+  <tr><td><a href="Rating.php.html#16">App\Entity\Rating</a></td><td class="text-right">56</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Enum/NewspaperStatus.php.html#11">App\Entity\Enum\NewspaperStatus</a></td><td class="text-right">42</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#23">App\Entity\Category</a></td><td class="text-right">22.15</td><td class="text-right">45.5%</td></tr>
+  <tr><td><a href="Enum/UserRole.php.html#11">App\Entity\Enum\UserRole</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Methods</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="240.0" x2="780" y2="240.0" class="chart-grid"/>
+ <text x="52" y="240.0" text-anchor="end" dominant-baseline="middle" class="chart-label">2</text>
+ <line x1="60" y1="130.0" x2="780" y2="130.0" class="chart-grid"/>
+ <text x="52" y="130.0" text-anchor="end" dominant-baseline="middle" class="chart-label">4</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">6</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="Newspaper.php.html#503"><circle cx="60.0" cy="130.0" r="20.0" class="bubble-danger"><title>App\Entity\Newspaper::calculateAverageRating — Coverage: 0.0% | Lines: 10 | Complexity: 4</title></circle></a>
+ <a href="Enum/NewspaperStatus.php.html#38"><circle cx="60.0" cy="295.0" r="15.5" class="bubble-danger"><title>App\Entity\Enum\NewspaperStatus::getAllStatuses — Coverage: 0.0% | Lines: 6 | Complexity: 1</title></circle></a>
+ <a href="Enum/NewspaperStatus.php.html#23"><circle cx="60.0" cy="75.0" r="14.1" class="bubble-danger"><title>App\Entity\Enum\NewspaperStatus::getDescription — Coverage: 0.0% | Lines: 5 | Complexity: 5</title></circle></a>
+ <a href="Newspaper.php.html#470"><circle cx="60.0" cy="240.0" r="12.6" class="bubble-danger"><title>App\Entity\Newspaper::addRating — Coverage: 0.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="Newspaper.php.html#487"><circle cx="60.0" cy="185.0" r="12.6" class="bubble-danger"><title>App\Entity\Newspaper::removeRating — Coverage: 0.0% | Lines: 4 | Complexity: 3</title></circle></a>
+ <a href="User.php.html#199"><circle cx="60.0" cy="240.0" r="12.6" class="bubble-danger"><title>App\Entity\User::addRating — Coverage: 0.0% | Lines: 4 | Complexity: 2</title></circle></a>
+ <a href="User.php.html#216"><circle cx="60.0" cy="185.0" r="12.6" class="bubble-danger"><title>App\Entity\User::removeRating — Coverage: 0.0% | Lines: 4 | Complexity: 3</title></circle></a>
+ <a href="Enum/UserRole.php.html#21"><circle cx="60.0" cy="185.0" r="11.0" class="bubble-danger"><title>App\Entity\Enum\UserRole::label — Coverage: 0.0% | Lines: 3 | Complexity: 3</title></circle></a>
+ <a href="Newspaper.php.html#147"><circle cx="780.0" cy="295.0" r="11.0" class="bubble-success"><title>App\Entity\Newspaper::__construct — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#339"><circle cx="60.0" cy="240.0" r="11.0" class="bubble-danger"><title>App\Entity\Newspaper::addTag — Coverage: 0.0% | Lines: 3 | Complexity: 2</title></circle></a>
+ <a href="Newspaper.php.html#391"><circle cx="60.0" cy="295.0" r="11.0" class="bubble-danger"><title>App\Entity\Newspaper::getComments — Coverage: 0.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#406"><circle cx="60.0" cy="240.0" r="11.0" class="bubble-danger"><title>App\Entity\Newspaper::addComment — Coverage: 0.0% | Lines: 3 | Complexity: 2</title></circle></a>
+ <a href="User.php.html#129"><circle cx="780.0" cy="295.0" r="11.0" class="bubble-success"><title>App\Entity\User::getRoles — Coverage: 100.0% | Lines: 3 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#92"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Category::setCreatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#158"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Category::setSlug — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#93"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Comment::setContent — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#117"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Comment::setNewspaper — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#141"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Comment::setAuthor — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#165"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Comment::setCreatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#181"><circle cx="780.0" cy="295.0" r="8.9" class="bubble-success"><title>App\Entity\Newspaper::setTitle — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#195"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::setId — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#219"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::setCreatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#243"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::setUpdatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#267"><circle cx="780.0" cy="295.0" r="8.9" class="bubble-success"><title>App\Entity\Newspaper::setContent — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#291"><circle cx="780.0" cy="295.0" r="8.9" class="bubble-success"><title>App\Entity\Newspaper::setCategory — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#315"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::setSlug — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#355"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::removeTag — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#379"><circle cx="780.0" cy="295.0" r="8.9" class="bubble-success"><title>App\Entity\Newspaper::setAuthor — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#422"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::removeComment — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#446"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Newspaper::setAverageRating — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#74"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Rating::setValue — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#98"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Rating::setNewspaper — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#122"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Rating::setUser — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#83"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Tag::setCreatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#107"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Tag::setUpdatedAt — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#131"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Tag::setSlug — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#155"><circle cx="60.0" cy="295.0" r="8.9" class="bubble-danger"><title>App\Entity\Tag::setTitle — Coverage: 0.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#144"><circle cx="780.0" cy="295.0" r="8.9" class="bubble-success"><title>App\Entity\User::setRoles — Coverage: 100.0% | Lines: 2 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#70"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\Category::getId — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#80"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\Category::getCreatedAt — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#104"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\Category::getUpdatedAt — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#114"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Category::setUpdatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#124"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\Category::getTitle — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#136"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\Category::setTitle — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Category.php.html#146"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Category::getSlug — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#71"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Comment::getId — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#81"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Comment::getContent — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#105"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Comment::getNewspaper — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#129"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Comment::getAuthor — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Comment.php.html#153"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Comment::getCreatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#159"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getId — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#169"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getTitle — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#207"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getCreatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#231"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getUpdatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#255"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getContent — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#279"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getCategory — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#303"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getSlug — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#327"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getTags — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#367"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getAuthor — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#434"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getAverageRating — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Newspaper.php.html#458"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Newspaper::getRatings — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#52"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Rating::getId — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#62"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Rating::getValue — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#86"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Rating::getNewspaper — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Rating.php.html#110"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Rating::getUser — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#61"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Tag::getId — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#71"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Tag::getCreatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#95"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Tag::getUpdatedAt — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#119"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Tag::getSlug — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="Tag.php.html#143"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\Tag::getTitle — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#59"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::__construct — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#75"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\User::getId — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#85"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::getEmail — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#95"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::setEmail — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#107"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::getUserIdentifier — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#117"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\User::getUsername — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#158"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::getPassword — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#168"><circle cx="780.0" cy="295.0" r="6.3" class="bubble-success"><title>App\Entity\User::setPassword — Coverage: 100.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#178"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\User::eraseCredentials — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="User.php.html#187"><circle cx="60.0" cy="295.0" r="6.3" class="bubble-danger"><title>App\Entity\User::getRatings — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Method</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="Enum/NewspaperStatus.php.html#23">App\Entity\Enum\NewspaperStatus::getDescription</a></td><td class="text-right">30</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#503">App\Entity\Newspaper::calculateAverageRating</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Enum/UserRole.php.html#21">App\Entity\Enum\UserRole::label</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#487">App\Entity\Newspaper::removeRating</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#216">App\Entity\User::removeRating</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#339">App\Entity\Newspaper::addTag</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#406">App\Entity\Newspaper::addComment</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#470">App\Entity\Newspaper::addRating</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#199">App\Entity\User::addRating</a></td><td class="text-right">6</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#92">App\Entity\Category::setCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#114">App\Entity\Category::setUpdatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#146">App\Entity\Category::getSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#158">App\Entity\Category::setSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#71">App\Entity\Comment::getId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#81">App\Entity\Comment::getContent</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#93">App\Entity\Comment::setContent</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#105">App\Entity\Comment::getNewspaper</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#117">App\Entity\Comment::setNewspaper</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#129">App\Entity\Comment::getAuthor</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#141">App\Entity\Comment::setAuthor</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#153">App\Entity\Comment::getCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Comment.php.html#165">App\Entity\Comment::setCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Enum/NewspaperStatus.php.html#38">App\Entity\Enum\NewspaperStatus::getAllStatuses</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#159">App\Entity\Newspaper::getId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#169">App\Entity\Newspaper::getTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#195">App\Entity\Newspaper::setId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#207">App\Entity\Newspaper::getCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#219">App\Entity\Newspaper::setCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#231">App\Entity\Newspaper::getUpdatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#243">App\Entity\Newspaper::setUpdatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#255">App\Entity\Newspaper::getContent</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#279">App\Entity\Newspaper::getCategory</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#303">App\Entity\Newspaper::getSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#315">App\Entity\Newspaper::setSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#327">App\Entity\Newspaper::getTags</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#355">App\Entity\Newspaper::removeTag</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#367">App\Entity\Newspaper::getAuthor</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#391">App\Entity\Newspaper::getComments</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#422">App\Entity\Newspaper::removeComment</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#434">App\Entity\Newspaper::getAverageRating</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#446">App\Entity\Newspaper::setAverageRating</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#458">App\Entity\Newspaper::getRatings</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#52">App\Entity\Rating::getId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#62">App\Entity\Rating::getValue</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#74">App\Entity\Rating::setValue</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#86">App\Entity\Rating::getNewspaper</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#98">App\Entity\Rating::setNewspaper</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#110">App\Entity\Rating::getUser</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Rating.php.html#122">App\Entity\Rating::setUser</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#61">App\Entity\Tag::getId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#71">App\Entity\Tag::getCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#83">App\Entity\Tag::setCreatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#95">App\Entity\Tag::getUpdatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#107">App\Entity\Tag::setUpdatedAt</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#119">App\Entity\Tag::getSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#131">App\Entity\Tag::setSlug</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#143">App\Entity\Tag::getTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Tag.php.html#155">App\Entity\Tag::setTitle</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#75">App\Entity\User::getId</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#117">App\Entity\User::getUsername</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#178">App\Entity\User::eraseCredentials</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="User.php.html#187">App\Entity\User::getRatings</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="Category.php.html#70">App\Entity\Category::getId</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Category.php.html#80">App\Entity\Category::getCreatedAt</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Category.php.html#104">App\Entity\Category::getUpdatedAt</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Category.php.html#124">App\Entity\Category::getTitle</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Category.php.html#136">App\Entity\Category::setTitle</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#147">App\Entity\Newspaper::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#181">App\Entity\Newspaper::setTitle</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#267">App\Entity\Newspaper::setContent</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#291">App\Entity\Newspaper::setCategory</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="Newspaper.php.html#379">App\Entity\Newspaper::setAuthor</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#59">App\Entity\User::__construct</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#85">App\Entity\User::getEmail</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#95">App\Entity\User::setEmail</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#107">App\Entity\User::getUserIdentifier</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#129">App\Entity\User::getRoles</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#144">App\Entity\User::setRoles</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#158">App\Entity\User::getPassword</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+  <tr><td><a href="User.php.html#168">App\Entity\User::setPassword</a></td><td class="text-right">1</td><td class="text-right">100.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 14.1.9</a> using <a href="https://www.php.net/" target="_top">PHP 8.5.6</a> and <a href="https://phpunit.de/">PHPUnit 13.1.12</a> at Sat Jun 20 9:09:46 UTC 2026.</small>
+    </p>
+   </footer>
+  </div>
+ </body>
+</html>
